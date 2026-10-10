@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>معرض المستقبل للتحوُّل الرقمي | الصف الثاني عشر | أ. نسرين الفارسي</title>
+<meta name="description" content="درس التحوُّل الرقمي للصف الثاني عشر بأسلوب معرض تفاعلي: تمهيد، معلومات، ألعاب، وتقويم ختامي وشهادة.">
+<meta name="theme-color" content="#070b1a">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070b1a; --card:#0f1630; --card2:#141d3d; --line:rgba(255,255,255,.09);
+  --text:#eef2ff; --muted:#a8b3d4; --cyan:#22d3ee; --violet:#a78bfa; --rose:#fb7185;
+  --orange:#f59e0b; --pink:#ec4899; --teal:#14b8a6; --sun:#facc15; --ok:#10b981; --bad:#f43f5e;
+  --accent:var(--cyan); --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Tajawal','Cairo',system-ui,sans-serif; color:var(--text); min-height:100vh; line-height:1.7;
+  background:
+    radial-gradient(900px 500px at 90% -10%,rgba(20,184,166,.22),transparent 60%),
+    radial-gradient(800px 500px at 0% 10%,rgba(236,72,153,.18),transparent 60%),
+    radial-gradient(900px 600px at 50% 110%,rgba(245,158,11,.14),transparent 60%),
+    var(--bg);
+  background-attachment:fixed; overflow-x:hidden;
+}
+body::before{ /* circuit grid */
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;z-index:0;
+  background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:radial-gradient(circle at 50% 30%,#000 30%,transparent 80%);
+}
+h1,h2,h3,h4{font-family:'Cairo','Tajawal',sans-serif;line-height:1.35}
+button{font-family:inherit;cursor:pointer;border:0;color:inherit;-webkit-tap-highlight-color:transparent}
+button:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.hidden{display:none!important}
+.wrap{position:relative;z-index:1;width:min(1120px,100%);margin:0 auto;padding:0 16px}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:20;background:rgba(7,11,26,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:10px;padding:8px 16px;width:min(1120px,100%);margin:0 auto}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;flex:1;background:none;text-align:right}
+.brand img{width:42px;height:42px;border-radius:12px;background:#fff;object-fit:contain;padding:2px;flex-shrink:0}
+.brand b{display:block;font-family:'Cairo';font-weight:900;font-size:clamp(14px,2.6vw,18px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  background:linear-gradient(90deg,var(--sun),var(--orange),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.brand small{display:block;color:var(--muted);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:var(--card2);border:1px solid var(--line);font-weight:800;font-size:13px;white-space:nowrap}
+.iconbtn{width:38px;height:38px;border-radius:12px;background:var(--card2);border:1px solid var(--line);font-size:18px;display:grid;place-items:center;flex-shrink:0}
+.iconbtn:hover{border-color:var(--cyan)}
+
+main{position:relative;z-index:1;padding:22px 0 40px}
+.screen{animation:in .45s ease both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.panel{background:linear-gradient(180deg,rgba(20,29,61,.92),rgba(15,22,48,.92));border:1px solid var(--line);border-radius:24px;padding:clamp(18px,4vw,36px);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.kicker{display:inline-block;padding:5px 14px;border-radius:999px;font-size:13px;font-weight:800;background:rgba(250,204,21,.12);color:var(--sun);border:1px solid rgba(250,204,21,.35)}
+.grad{background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.muted{color:var(--muted)}
+.center{text-align:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:14px;font-weight:800;font-size:16px;
+  background:linear-gradient(90deg,var(--teal),var(--violet),var(--pink));color:#fff;box-shadow:0 10px 30px rgba(167,139,250,.3);transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:var(--card2);border:1px solid var(--line);box-shadow:none}
+.btn.gold{background:linear-gradient(90deg,var(--sun),var(--orange));color:#1b1300}
+.btn[disabled]{opacity:.45;pointer-events:none}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.row.c{justify-content:center}
+.spacer{height:18px}
+
+/* ---------- robot ---------- */
+.bot{display:flex;gap:12px;align-items:flex-end;margin:16px 0}
+.bot svg{width:72px;height:84px;flex-shrink:0;animation:float 3.4s ease-in-out infinite;filter:drop-shadow(0 8px 18px rgba(34,211,238,.35))}
+.bot.big svg{width:110px;height:128px}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.bubble{position:relative;background:#dbeafe;color:#0b1b3a;border-radius:16px;padding:10px 14px;font-weight:700;font-size:15px;max-width:620px}
+.bubble::after{content:"";position:absolute;bottom:14px;right:-8px;border:8px solid transparent;border-left-color:#dbeafe;border-right:0}
+.bubble small{display:block;font-size:11px;color:#2563eb;font-weight:800}
+
+/* ---------- welcome ---------- */
+.hero{display:grid;gap:22px;align-items:center;grid-template-columns:1fr}
+@media(min-width:860px){.hero{grid-template-columns:1.25fr .75fr}}
+.hero h1{font-size:clamp(28px,6vw,52px);font-weight:900;margin:12px 0}
+.hero p{font-size:clamp(15px,2.2vw,18px)}
+.logoCard{background:#fff;border-radius:24px;padding:18px;display:grid;place-items:center;box-shadow:0 0 0 6px rgba(250,204,21,.15),0 20px 50px rgba(0,0,0,.4)}
+.logoCard img{width:100%;max-width:300px;height:auto}
+.field{margin:20px 0 14px}
+.field label{display:block;font-weight:800;margin-bottom:6px}
+.field input{width:100%;padding:14px 16px;border-radius:14px;border:2px solid rgba(34,211,238,.35);background:#0a1126;color:#fff;font:inherit;font-size:17px;font-weight:700;text-align:center}
+.field input::placeholder{color:#5f6b8f}
+.credit{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);font-size:14px;color:var(--muted)}
+.credit b{color:var(--pink)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags span{font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line)}
+
+/* ---------- warm-up flip cards ---------- */
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr))}
+.flip{perspective:1000px;min-height:210px;background:none;text-align:right;padding:0}
+.flip .in{position:relative;width:100%;height:100%;min-height:210px;transition:transform .6s;transform-style:preserve-3d}
+.flip.on .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;border-radius:var(--r);padding:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;gap:6px}
+.flip .f{background:linear-gradient(160deg,#3b2a12,#1d1530);border:1px solid rgba(245,158,11,.4)}
+.flip .b{background:linear-gradient(160deg,#083344,#1e1b4b);border:1px solid rgba(34,211,238,.45);transform:rotateY(180deg)}
+.flip .em{font-size:34px}
+.flip h4{font-size:17px}
+.flip .lbl{font-size:12px;font-weight:800;padding:2px 10px;border-radius:999px;align-self:flex-start}
+.flip .f .lbl{background:rgba(245,158,11,.2);color:#fcd34d}
+.flip .b .lbl{background:rgba(34,211,238,.2);color:#67e8f9}
+.flip p{font-size:14.5px}
+.flip .tap{margin-top:auto;font-size:12px;color:var(--muted)}
+
+.defBox{border-radius:22px;padding:clamp(16px,3vw,26px);background:linear-gradient(135deg,rgba(20,184,166,.18),rgba(167,139,250,.15));border:1px solid rgba(20,184,166,.45)}
+.defBox h3{font-size:clamp(19px,3vw,24px);margin-bottom:6px;color:#5eead4}
+.defBox p{font-size:clamp(15px,2.2vw,18px)}
+.pillGrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));margin-top:12px}
+.pill{border-radius:14px;padding:12px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-weight:700;font-size:15px}
+.pill i{font-style:normal;font-size:22px;margin-left:6px}
+
+/* ---------- hub ---------- */
+.hubHead{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+.progress{height:12px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin-top:10px}
+.progress>div{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--sun),var(--pink));transition:width .6s}
+.pavs{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));margin-top:20px}
+.pav{position:relative;text-align:right;border-radius:22px;padding:18px;background:var(--card);border:1px solid var(--line);overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column;gap:8px;min-height:190px}
+.pav::before{content:"";position:absolute;inset:0 0 auto 0;height:5px;background:var(--c)}
+.pav::after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;left:-50px;bottom:-60px;background:var(--c);opacity:.12;filter:blur(10px)}
+.pav:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 14px 40px -12px var(--c)}
+.pav .top{display:flex;justify-content:space-between;align-items:center}
+.pav .ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:28px;background:rgba(255,255,255,.07);border:1px solid var(--c)}
+.pav h3{font-size:19px}
+.pav p{font-size:14px;color:var(--muted)}
+.pav .go{margin-top:auto;font-weight:800;color:var(--c);font-size:14px}
+.status{font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.07);color:var(--muted)}
+.status.done{background:rgba(16,185,129,.18);color:#6ee7b7}
+.pav.locked{filter:grayscale(.8);opacity:.6}
+.pav.locked:hover{transform:none;box-shadow:none}
+
+/* ---------- pavilion ---------- */
+.pavHead{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:6px}
+.pavHead h2{font-size:clamp(22px,4vw,32px)}
+.pavHead .ic{font-size:34px;margin-left:8px}
+.steps{display:flex;gap:8px;flex-wrap:wrap}
+.steps span{font-size:13px;font-weight:800;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);color:var(--muted)}
+.steps span.on{background:var(--accent);color:#06101f;border-color:transparent}
+.lead{font-size:clamp(15px,2.2vw,18px);margin:10px 0 16px}
+.info{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr))}
+.icard{border-radius:var(--r);padding:16px;background:var(--card2);border:1px solid var(--line);border-top:4px solid var(--accent);display:flex;flex-direction:column;gap:6px}
+.icard .em{font-size:30px}
+.icard h4{font-size:17.5px}
+.icard .en{font-size:12px;color:var(--accent);font-weight:700;direction:ltr;text-align:right;font-family:system-ui,sans-serif}
+.icard p{font-size:15px;color:#d6dcf2}
+.icard .ex{font-size:14px;padding:8px 10px;border-radius:10px;background:rgba(255,255,255,.05);border-right:3px solid var(--accent)}
+.icard .sol{font-size:14px;padding:8px 10px;border-radius:10px;background:rgba(16,185,129,.12);border-right:3px solid var(--ok)}
+.note{margin-top:16px;border-radius:16px;padding:14px 16px;background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.35);font-size:15.5px}
+.note b{color:#7dd3fc}
+.list{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));margin-top:6px}
+.list div{padding:12px 14px;border-radius:14px;background:var(--card2);border:1px solid var(--line);font-weight:700;font-size:15px;display:flex;gap:10px;align-items:center}
+.list div i{font-style:normal;font-size:22px}
+.sectionT{font-size:19px;margin:18px 0 8px;color:var(--accent)}
+.timeline{position:relative;display:grid;gap:14px;padding-right:26px}
+.timeline::before{content:"";position:absolute;right:9px;top:8px;bottom:8px;width:3px;border-radius:3px;background:linear-gradient(var(--sun),var(--orange),var(--pink))}
+.tl{position:relative;border-radius:var(--r);padding:14px 16px;background:var(--card2);border:1px solid var(--line)}
+.tl::before{content:attr(data-n);position:absolute;right:-30px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--orange);color:#1b1300;font-weight:900;font-size:13px;display:grid;place-items:center;box-shadow:0 0 0 4px rgba(245,158,11,.25)}
+.tl h4{font-size:17.5px}
+.tl .en{font-size:12px;color:var(--orange);direction:ltr;text-align:right;font-family:system-ui,sans-serif}
+.tl p{font-size:15px;color:#d6dcf2}
+
+/* ---------- games ---------- */
+.game{margin-top:8px}
+.gTitle{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-bottom:10px}
+.gTitle h3{font-size:clamp(18px,3vw,23px)}
+.gTag{font-size:12px;font-weight:800;padding:4px 12px;border-radius:999px;background:var(--accent);color:#06101f}
+.howto{font-size:14.5px;color:var(--muted);margin-bottom:14px}
+.tile{width:100%;text-align:right;padding:12px 14px;border-radius:14px;background:var(--card2);border:2px solid var(--line);font-weight:700;font-size:15px;line-height:1.55;transition:border-color .15s,background .15s,transform .15s}
+.tile:hover{border-color:rgba(255,255,255,.25)}
+.tile.sel{border-color:var(--sun);background:rgba(250,204,21,.12);transform:scale(1.01)}
+.tile.ok{border-color:var(--ok);background:rgba(16,185,129,.15);pointer-events:none}
+.tile.no{border-color:var(--bad);background:rgba(244,63,94,.15)}
+.tile.dim{opacity:.5}
+.shake{animation:shake .4s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.match{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:720px){.match{grid-template-columns:1.4fr 1fr}}
+.col{display:grid;gap:10px;align-content:start}
+.colT{font-size:13px;font-weight:800;color:var(--accent)}
+.tile .pair{display:block;font-size:12.5px;color:#6ee7b7;margin-top:4px}
+.bins{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(min(46%,190px),1fr))}
+.bin{border-radius:16px;padding:12px;min-height:110px;background:rgba(255,255,255,.04);border:2px dashed rgba(255,255,255,.18);text-align:right;display:flex;flex-direction:column;gap:6px;transition:border-color .15s,background .15s}
+.bin.ready{border-color:var(--sun);background:rgba(250,204,21,.06)}
+.bin h4{font-size:15.5px}
+.bin .em{font-size:24px}
+.bin .got{font-size:12.5px;padding:5px 8px;border-radius:9px;background:rgba(16,185,129,.18);color:#a7f3d0;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chips .tile{width:auto;flex:1 1 220px}
+.order{display:grid;gap:10px;max-width:720px}
+.oitem{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;background:var(--card2);border:2px solid var(--line);font-weight:800}
+.oitem .n{width:30px;height:30px;border-radius:50%;background:var(--orange);color:#1b1300;display:grid;place-items:center;font-weight:900;flex-shrink:0}
+.oitem .t{flex:1}
+.oitem .mv{display:flex;gap:6px}
+.oitem .mv button{width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.08);font-size:16px}
+.oitem.ok{border-color:var(--ok)}
+.oitem.no{border-color:var(--bad)}
+.qcard{max-width:820px}
+.qmeta{font-size:13px;font-weight:800;color:var(--accent);margin-bottom:6px}
+.qtext{font-size:clamp(17px,2.8vw,22px);font-weight:800;margin-bottom:14px;font-family:'Cairo'}
+.opts{display:grid;gap:10px}
+.opts.two{grid-template-columns:1fr 1fr}
+.feedback{margin-top:14px;border-radius:14px;padding:12px 14px;font-weight:700;font-size:15px}
+.feedback.ok{background:rgba(16,185,129,.14);border:1px solid rgba(16,185,129,.5);color:#bbf7d0}
+.feedback.no{background:rgba(244,63,94,.12);border:1px solid rgba(244,63,94,.5);color:#fecdd3}
+.feedback .why{display:block;color:#e2e8f0;font-weight:500;margin-top:4px}
+.dots{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.dots i{width:22px;height:6px;border-radius:9px;background:rgba(255,255,255,.12)}
+.dots i.ok{background:var(--ok)} .dots i.no{background:var(--bad)} .dots i.cur{background:var(--sun)}
+textarea{width:100%;min-height:130px;border-radius:14px;padding:12px 14px;background:#0a1126;color:#fff;border:2px solid rgba(167,139,250,.4);font:inherit;font-size:16px;resize:vertical}
+.discuss{border-radius:20px;padding:16px;background:linear-gradient(135deg,rgba(167,139,250,.14),rgba(236,72,153,.1));border:1px solid rgba(167,139,250,.4)}
+.discuss h4{font-size:17px;margin-bottom:6px}
+.count{font-size:12.5px;color:var(--muted);margin-top:4px}
+.gameBar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+
+/* ---------- done / certificate ---------- */
+.badgeBig{font-size:72px;animation:pop .6s ease}
+@keyframes pop{0%{transform:scale(.2) rotate(-20deg)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+.stars{font-size:30px;letter-spacing:4px}
+/* ----- 3D certificate ----- */
+.certStage{position:relative;perspective:1600px;padding:clamp(14px,4vw,50px) 0;touch-action:pan-y}
+.orb{position:absolute;border-radius:50%;filter:blur(40px);opacity:.55;pointer-events:none}
+.o1{width:260px;height:260px;background:#14b8a6;top:0;right:4%}
+.o2{width:220px;height:220px;background:#ec4899;bottom:0;left:6%}
+.o3{width:180px;height:180px;background:#facc15;top:40%;left:40%;opacity:.3}
+.cert3d{--rx:4deg;--ry:-8deg;--mx:30%;--my:20%;position:relative;width:min(1000px,100%,calc((100vh - 120px) * 1.414));min-width:min(100%,640px);margin:0 auto;transform-style:preserve-3d;
+  transform:rotateX(var(--rx)) rotateY(var(--ry));transition:transform .25s ease-out;animation:sway 7s ease-in-out infinite;container-type:inline-size}
+.cert3d.live{animation:none}
+@keyframes sway{0%,100%{transform:rotateX(5deg) rotateY(-9deg)}50%{transform:rotateX(2deg) rotateY(9deg)}}
+.plate{position:absolute;inset:0;border-radius:22px;background:linear-gradient(135deg,#b7791f,#7c4a03 60%,#e8b923)}
+.p1{transform:translateZ(-5px)}.p2{transform:translateZ(-10px)}
+.p3{transform:translateZ(-16px);box-shadow:0 40px 80px rgba(0,0,0,.6),0 0 60px rgba(250,204,21,.25)}
+.paper{position:relative;transform-style:preserve-3d;border-radius:22px;color:#1f2937;text-align:center;
+  padding:clamp(18px,5cqw,52px) clamp(16px,6cqw,64px);display:flex;flex-direction:column;align-items:center;gap:clamp(4px,1cqw,10px);
+  background:
+    radial-gradient(circle at 50% 46%,rgba(255,255,255,.95) 0 34%,transparent 70%),
+    repeating-radial-gradient(circle at 50% 46%,rgba(15,118,110,.06) 0 2px,transparent 2px 9px),
+    repeating-conic-gradient(from 0deg at 50% 46%,rgba(201,151,26,.07) 0 3deg,transparent 3deg 6deg),
+    linear-gradient(160deg,#fffdf4,#fbf3dc 55%,#fff8e7);
+  box-shadow:inset 0 0 0 clamp(5px,1.1cqw,11px) #fffdf4,inset 0 0 0 clamp(7px,1.4cqw,14px) #c9971a,inset 0 0 0 clamp(9px,1.8cqw,18px) #fffdf4,inset 0 0 0 clamp(10px,2cqw,20px) #0f766e,inset 0 0 70px rgba(201,151,26,.25)}
+@media(min-width:760px){.paper{aspect-ratio:1.414/1;justify-content:center}}
+.z1{transform:translateZ(18px)}.z2{transform:translateZ(30px)}.z3{transform:translateZ(46px)}.z4{transform:translateZ(64px)}
+.corner{position:absolute;width:clamp(48px,11cqw,110px);transform:translateZ(10px)}
+.corner svg{display:block;width:100%}
+.c1{top:clamp(6px,1.4cqw,14px);right:clamp(6px,1.4cqw,14px);transform:translateZ(10px) scaleX(-1)}
+.c2{top:clamp(6px,1.4cqw,14px);left:clamp(6px,1.4cqw,14px)}
+.c3{bottom:clamp(6px,1.4cqw,14px);right:clamp(6px,1.4cqw,14px);transform:translateZ(10px) scale(-1)}
+.c4{bottom:clamp(6px,1.4cqw,14px);left:clamp(6px,1.4cqw,14px);transform:translateZ(10px) scaleY(-1)}
+.cTop{width:100%;display:flex;justify-content:space-between;align-items:center;font-weight:800;color:#0f766e;font-size:clamp(10px,1.4cqw,14px);line-height:1.5;padding:0 clamp(30px,8cqw,90px)}
+.medal{width:clamp(70px,13cqw,130px);aspect-ratio:1;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;padding:clamp(5px,1cqw,10px);
+  box-shadow:0 0 0 4px #e8b923,0 0 0 8px #fff7d6,0 0 0 10px #0f766e,0 14px 30px rgba(0,0,0,.3)}
+.medal img{display:block;width:100%;height:auto}
+.ribbon{position:relative;margin-top:clamp(4px,1cqw,10px);padding:clamp(5px,1cqw,10px) clamp(26px,6cqw,60px);background:linear-gradient(180deg,#14b8a6,#0f766e 60%,#115e59);
+  box-shadow:0 10px 22px rgba(15,118,110,.45),inset 0 2px 0 rgba(255,255,255,.35)}
+.ribbon::before,.ribbon::after{content:"";position:absolute;top:22%;width:clamp(18px,3.5cqw,34px);height:100%;background:#115e59;z-index:-1}
+.ribbon::before{right:calc(-1 * clamp(14px,2.6cqw,26px));clip-path:polygon(0 0,100% 0,70% 50%,100% 100%,0 100%)}
+.ribbon::after{left:calc(-1 * clamp(14px,2.6cqw,26px));clip-path:polygon(0 0,100% 0,100% 100%,0 100%,30% 50%)}
+.ribbon span{font-family:'Aref Ruqaa','Cairo',serif;font-weight:700;font-size:clamp(20px,4.6cqw,46px);line-height:1.3;
+  background:linear-gradient(180deg,#fff7c2,#facc15 45%,#d4a017 55%,#fff3b0);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 0 rgba(0,0,0,.25))}
+.cSub{font-weight:800;color:#b45309;font-size:clamp(11px,1.6cqw,16px)}
+.cTxt{font-size:clamp(11px,1.6cqw,16px);color:#374151;max-width:72cqw}
+.cName{font-family:'Aref Ruqaa','Cairo',serif;font-weight:700;font-size:clamp(28px,6.4cqw,64px);line-height:1.35;padding:0 4cqw;
+  background:linear-gradient(180deg,#0f766e,#0d9488 40%,#b7791f 60%,#e8b923);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 0 #fff) drop-shadow(0 4px 0 rgba(183,121,31,.55)) drop-shadow(0 10px 12px rgba(0,0,0,.22))}
+.cStats{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(6px,1.4cqw,14px);margin:clamp(2px,.8cqw,8px) 0 clamp(6px,1.2cqw,12px)}
+.cStats div{min-width:clamp(64px,11cqw,110px);padding:clamp(4px,.8cqw,8px) clamp(8px,1.4cqw,14px);border-radius:14px;display:flex;flex-direction:column;align-items:center;line-height:1.25;
+  background:linear-gradient(180deg,#fffbeb,#fde68a);border:1px solid #e8b923;box-shadow:0 6px 0 #c9971a,0 10px 18px rgba(0,0,0,.18)}
+.cStats small{font-size:clamp(9px,1.1cqw,12px);color:#92400e;font-weight:700}
+.cStats b{font-family:'Cairo';font-size:clamp(14px,2.2cqw,22px);color:#0f766e}
+.cRefl{max-width:76cqw;font-size:clamp(10px,1.35cqw,14px);color:#134e4a;background:rgba(20,184,166,.08);border:1px dashed #14b8a6;border-radius:12px;padding:clamp(4px,.8cqw,8px) clamp(8px,1.4cqw,14px)}
+.cFoot{width:100%;display:flex;justify-content:space-between;align-items:flex-end;padding:0 clamp(24px,7cqw,80px);margin-top:clamp(2px,1cqw,10px)}
+.cFoot>div:not(.sealWrap){display:flex;flex-direction:column;min-width:24cqw;border-top:2px solid #c9971a;padding-top:4px;font-size:clamp(11px,1.5cqw,15px)}
+.cFoot small{color:#6b7280;font-weight:700}
+.sign{font-family:'Aref Ruqaa','Cairo',serif;font-size:clamp(16px,2.6cqw,26px);color:#0f766e;line-height:1.3}
+.sealWrap{width:clamp(70px,12cqw,124px)}
+.rosette{display:block;width:100%;filter:drop-shadow(0 10px 12px rgba(0,0,0,.35));animation:spinS 18s ease-in-out infinite}
+@keyframes spinS{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+.holo{position:absolute;inset:0;border-radius:22px;pointer-events:none;transform:translateZ(70px);mix-blend-mode:soft-light;
+  background:radial-gradient(circle at var(--mx) var(--my),rgba(255,255,255,.8),transparent 40%),
+    linear-gradient(115deg,transparent 30%,rgba(34,211,238,.35) 42%,rgba(236,72,153,.3) 50%,rgba(250,204,21,.35) 58%,transparent 70%);
+  background-size:100% 100%,250% 250%;animation:holo 6s ease-in-out infinite}
+@keyframes holo{0%,100%{background-position:0 0,0% 0%}50%{background-position:0 0,100% 100%}}
+
+.review{display:grid;gap:12px;text-align:right;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr))}
+.rv{border-radius:16px;padding:14px;background:var(--card2);border:1px solid var(--line);border-right:4px solid var(--rose);display:flex;flex-direction:column;gap:6px;font-size:15px}
+.rq{font-weight:800;display:flex;gap:8px}
+.rq span{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--rose);color:#1b0610;font-size:13px;display:grid;place-items:center}
+.ry{color:#fecdd3}.rc{color:#bbf7d0;font-weight:700}
+.rw{font-size:14px;color:#dbeafe;background:rgba(56,189,248,.1);border-radius:10px;padding:8px 10px}
+.scoreRow{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:12px 0}
+.scoreRow div{padding:10px 16px;border-radius:14px;background:var(--card2);border:1px solid var(--line);font-weight:800}
+.scoreRow b{color:var(--sun);font-size:20px}
+footer{position:relative;z-index:1;text-align:center;font-size:13px;color:var(--muted);padding:18px 16px 28px;border-top:1px solid var(--line)}
+footer b{color:var(--pink)}
+footer button{background:none;color:var(--muted);text-decoration:underline;font-size:12px;margin-top:6px}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:50}
+#toast{visibility:hidden;opacity:0;position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(120px);z-index:60;background:#111a38;border:1px solid var(--sun);color:#fff;padding:10px 18px;border-radius:14px;font-weight:800;transition:transform .35s;max-width:92vw;text-align:center}
+#toast.show{visibility:visible;opacity:1;transform:translateX(-50%) translateY(0)}
+
+@media(max-width:560px){
+  .bar{padding:8px 10px;gap:6px}
+  .brand img{width:36px;height:36px}
+  .chip{padding:5px 8px;font-size:12px}
+  .hideSm{display:none!important}
+  .bot svg{width:56px;height:66px}
+  .opts.two{grid-template-columns:1fr}
+  .btn{padding:12px 18px;font-size:15px}
+}
+@media print{
+  body{background:#fff!important}
+  body::before,header,footer,#confetti,#toast,.noPrint{display:none!important}
+  main{padding:0}
+  .screen{animation:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .certStage{perspective:none;padding:0}
+  .orb,.holo,.plate{display:none!important}
+  .cert3d{transform:none!important;animation:none!important;width:100%}
+  .z1,.z2,.z3,.z4,.corner{transform:none!important}
+  .c1{transform:scaleX(-1)!important}.c3{transform:scale(-1)!important}.c4{transform:scaleY(-1)!important}
+  .certStage{zoom:.8;break-inside:avoid}
+  .paper{aspect-ratio:auto;height:auto;justify-content:center;gap:6px;padding:12mm 16mm}
+  .cert3d{min-width:0}
+  @page{size:A4 landscape;margin:10mm}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="confetti"></canvas>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<header>
+  <div class="bar">
+    <button class="brand" onclick="goHub()" aria-label="الذهاب إلى خريطة المعرض">
+      <img src="logo.jpg" alt="شعار مدرسة أمامة بنت أبي العاص">
+      <span style="min-width:0">
+        <b>معرض المستقبل للتحوُّل الرقمي</b>
+        <small>مدرسة أمامة بنت أبي العاص • الصف الثاني عشر</small>
+      </span>
+    </button>
+    <span class="chip" title="النقاط">⭐ <span id="hScore">0</span></span>
+    <span class="chip hideSm" title="الأوسمة">🏅 <span id="hBadges">0/6</span></span>
+    <button class="iconbtn" id="sndBtn" onclick="toggleSound()" aria-label="تشغيل/إيقاف الصوت">🔊</button>
+  </div>
+</header>
+
+<main class="wrap" id="app"></main>
+
+<footer>
+  منهج تقنية المعلومات • الصف الثاني عشر • الوحدة الثانية: التحوُّل الرقمي — الدرس الأول<br>
+  تصميم وإعداد: <b>أ. نسرين الفارسي</b> • مدرسة أمامة بنت أبي العاص للتعليم الأساسي (10–12)<br>
+  <button onclick="resetAll()">بدء زيارة جديدة (مسح التقدم)</button>
+</footer>
+
+<script>
+/* =========================================================
+   المحتوى — مأخوذ من كتاب الطالب (الوحدة الثانية، الدرس الأول، ص62–72)
+   ========================================================= */
+const WARMUP = {
+  cards: [
+    {em:'🛂', t:'تجديد جواز السفر', then:'الذهاب إلى مركز الشرطة، وملء نماذج ورقية، والانتظار في طابور طويل.', now:'تقديم الطلب وتجديد الجواز عبر الإنترنت من خلال خدمات شرطة عُمان السلطانية الرقمية.'},
+    {em:'🏥', t:'الملف الصحي', then:'ملف ورقي محفوظ في المستشفى، قد يضيع أو يصعب الوصول إليه.', now:'تطبيق «شفاء» من وزارة الصحة يتيح الاطلاع على الملف الصحي من الهاتف.'},
+    {em:'🛍️', t:'التسوّق', then:'التنقّل بين المحلات والدفع نقدًا فقط.', now:'مواقع ويب تجارية، ومدفوعات رقمية، وتجارب تسوّق شخصية.'},
+    {em:'📚', t:'الدراسة', then:'كتب ورقية وسبورة داخل الصف فقط.', now:'منصات تعلّم عبر الإنترنت، ولوحات تعليمية رقمية، وصفوف افتراضية.'},
+    {em:'💸', t:'تحويل الأموال', then:'زيارة فرع البنك في أوقات الدوام والانتظار.', now:'تطبيقات مصرفية على الهاتف وتحويلات مالية فورية عبر الإنترنت.'}
+  ],
+  q: {q:'برأيكِ، ما الذي يجمع كل هذه التغيّرات؟', o:['أصبحت الخدمات أصعب وأغلى','دمج التقنيات الرقمية لتحسين طريقة العمل وتقديم الخدمات','الاستغناء عن الإنسان تمامًا'], c:1},
+  definition: 'التحوُّل الرقمي ثورة قائمة على <b>دمج الأدوات الرقمية المتطورة</b> – كالذكاء الاصطناعي، وإنترنت الأشياء، والحوسبة السحابية، والبيانات الضخمة – في جوانب الأعمال المختلفة.',
+  importance: [
+    ['⚙️','تعزيز الكفاءة التشغيلية'],
+    ['😊','تحسين تجربة العملاء'],
+    ['🚀','فتح آفاق للنمو والابتكار'],
+    ['🏆','اكتساب ميزة تنافسية والنجاح في قطاع الأعمال']
+  ],
+  goals: ['مفهوم التحوُّل الرقمي وأهميته','فوائد التحوُّل الرقمي','مجالات التحوُّل الرقمي','التحوُّل الرقمي في سلطنة عُمان','مراحل التحوُّل الرقمي','التقنيات التي تدفع التحوُّل الرقمي','تحديات التحوُّل الرقمي ومخاطره']
+};
+
+const PAVS = [
+ { id:'p1', title:'جناح الفوائد', sub:'فوائد التحوُّل الرقمي', icon:'💡', color:'#22d3ee',
+   desc:'المرونة، والقرارات الذكية، والابتكار، وتجربة العملاء.',
+   lead:'لماذا تتسابق المؤسسات نحو التحوُّل الرقمي؟ تعرّفي على أبرز فوائده:',
+   learn:[{k:'cards', items:[
+     {em:'🏠', t:'المرونة والعمل عن بُعد', p:'تتيح الحوسبة السحابية والأدوات الرقمية للموظفين العمل من أي مكان، مما يسهّل التكيّف أثناء حالات الطوارئ أو الظروف الاستثنائية مثل انتشار الأوبئة.'},
+     {em:'📊', t:'اتخاذ قرارات أفضل', p:'من خلال الوصول إلى البيانات والتحليلات في الوقت الفعلي، يمكن للمؤسسات اتخاذ قرارات أكثر ذكاءً.', ex:'مثال: تحلّل الشركات سلوك العملاء وتعدّل منتجاتها وفقًا لذلك.'},
+     {em:'💡', t:'زيادة الابتكار', p:'تمكّن الأدوات الرقمية الأفراد من اختبار الأفكار الجديدة بشكل أسرع.', ex:'مثال: تجربة المنتجات أو الخدمات الجديدة بسرعة وتحسينها بناءً على ملاحظات المستخدمين.'},
+     {em:'🤝', t:'تحسين تجربة العملاء', p:'تسهّل الأنظمة الرقمية تفاعل العملاء مع الشركات من خلال تطبيقات الأجهزة المحمولة، ومواقع الويب، وروبوتات المحادثة لدعم العملاء.'}
+   ]}],
+   games:[{type:'match', title:'لعبة: طابقي الموقف بالفائدة', howto:'اضغطي على موقف، ثم اضغطي على الفائدة التي يمثّلها.',
+     pairs:[
+       ['موظفة تكمل عملها من منزلها أثناء انتشار وباء باستخدام الأدوات السحابية','المرونة والعمل عن بُعد'],
+       ['متجر يحلّل بيانات مشتريات عملائه في الوقت الفعلي ليعدّل منتجاته','اتخاذ قرارات أفضل'],
+       ['شركة تطلق نسخة تجريبية من تطبيق وتحسّنه بسرعة بناءً على ملاحظات المستخدمين','زيادة الابتكار'],
+       ['بنك يجيب عن استفسارات عملائه على مدار الساعة عبر روبوت محادثة','تحسين تجربة العملاء']
+     ]}]
+ },
+ { id:'p2', title:'المدينة الرقمية', sub:'مجالات التحوُّل الرقمي', icon:'🏙️', color:'#a78bfa',
+   desc:'الصحة، والتعليم، والتجارة، والخدمات المصرفية والحكومية.',
+   lead:'يؤثّر التحوُّل الرقمي في حياتنا اليومية باستمرار، حتى وإن لم نلاحظه؛ من طريقة الدراسة والتسوّق إلى الرعاية الصحية والخدمات الحكومية. تجوّلي في المدينة الرقمية:',
+   learn:[{k:'cards', items:[
+     {em:'🩺', t:'الرعاية الصحية', p:'سجلات المرضى الرقمية، وأدوات التشخيص بالذكاء الاصطناعي، وزيارات الأطباء الافتراضية.'},
+     {em:'🎓', t:'التعليم', p:'منصات التعلّم عبر الإنترنت، واللوحات التعليمية الرقمية، والصفوف الدراسية الافتراضية.'},
+     {em:'🛒', t:'التجارة', p:'مواقع الويب التجارية، والمدفوعات الرقمية، وتجارب التسوّق الشخصية.'},
+     {em:'🏦', t:'الخدمات المصرفية', p:'تطبيقات الخدمات المصرفية عبر الهاتف المحمول، والتحويلات المالية عبر الإنترنت، وروبوتات المحادثة الآلية لخدمة العملاء.'},
+     {em:'🏛️', t:'الخدمات الحكومية', p:'الخدمات الإلكترونية لتقديم طلبات الحصول على بطاقات الأحوال المدنية، ودفع الفواتير، والوصول إلى المعلومات العامة.'}
+   ]}],
+   games:[{type:'sort', title:'لعبة: وزّعي الخدمات على مباني المدينة', howto:'اضغطي على بطاقة الخدمة، ثم اضغطي على المجال الذي تنتمي إليه.',
+     bins:[['health','🩺','الرعاية الصحية'],['edu','🎓','التعليم'],['trade','🛒','التجارة'],['bank','🏦','الخدمات المصرفية'],['gov','🏛️','الخدمات الحكومية']],
+     items:[
+       ['سجلات المرضى الرقمية','health'],['زيارة طبيب افتراضية','health'],
+       ['صف دراسي افتراضي','edu'],['منصة تعلّم عبر الإنترنت','edu'],
+       ['تجربة تسوّق شخصية على موقع تجاري','trade'],['الدفع الرقمي عند الشراء','trade'],
+       ['تحويل مالي عبر تطبيق الهاتف','bank'],['روبوت محادثة يخدم عملاء البنك','bank'],
+       ['طلب بطاقة الأحوال المدنية إلكترونيًا','gov'],['دفع الفواتير والوصول إلى المعلومات العامة','gov']
+     ]}]
+ },
+ { id:'p3', title:'واحة عُمان 2040', sub:'التحوُّل الرقمي في سلطنة عُمان', icon:'🕌', color:'#fb7185',
+   desc:'شرطة عُمان السلطانية، وتطبيق شفاء، ورؤية عُمان 2040.',
+   lead:'تسعى الحكومة في سلطنة عُمان نحو التحوُّل الرقمي الشامل الذي يُعدّ <b>ركيزة أساسية في رؤية عُمان 2040</b>. ومن أمثلة ذلك الخدمات الرقمية التي تقدّمها شرطة عُمان السلطانية لجعل الخدمات أسرع وأسهل وأكثر أمانًا للمواطنين والمقيمين:',
+   learn:[
+     {k:'list', items:[['🪪','تقديم وتجديد بطاقات الإقامة وجوازات السفر عبر الإنترنت'],['🚦','دفع المخالفات المرورية عبر بوابة الدفع الإلكتروني'],['🚗','تجديد تسجيل المركبات وحجز مواعيد المعاينة'],['📄','الإبلاغ عن فقدان المستندات عبر الإنترنت'],['✈️','التحقق من حالة التأشيرات وتقديم طلبات تأشيرات لمّ شمل الأسرة'],['📅','نظام حجز المواعيد الإلكترونية لزيارة مراكز خدمة الشرطة']]},
+     {k:'note', html:'<b>ℹ️ من الأمثلة الأخرى:</b> طوّرت وزارة الصحة <b>تطبيق «شفاء»</b> الذي يتيح للأفراد الاطلاع على ملفاتهم الصحية.'}
+   ],
+   games:[
+     {type:'pick', title:'لعبة: اكتشفي خدمات شرطة عُمان السلطانية الرقمية', howto:'اختاري كل الخدمات التي ذكرها الكتاب كخدمات رقمية لشرطة عُمان السلطانية، ثم اضغطي «تحقّقي». انتبهي: هناك بطاقات دخيلة!',
+       items:[['تجديد جوازات السفر عبر الإنترنت',1],['حجز تذاكر الطيران',0],['دفع المخالفات المرورية إلكترونيًا',1],['تجديد تسجيل المركبات وحجز موعد المعاينة',1],['التسجيل في الجامعات',0],['الإبلاغ عن فقدان المستندات',1],['التحقق من حالة التأشيرات',1],['شراء المواد الغذائية',0],['حجز موعد لزيارة مركز خدمة الشرطة',1]]},
+     {type:'mcq', title:'سؤالان سريعان', qs:[
+       {q:'يُعدّ التحوُّل الرقمي الشامل في سلطنة عُمان ركيزة أساسية في:', o:['رؤية عُمان 2020','رؤية عُمان 2040','الخطة الخمسية الأولى','رؤية عُمان 2030'], c:1, why:'التحوُّل الرقمي الشامل ركيزة أساسية في رؤية عُمان 2040.'},
+       {q:'تطبيق «شفاء» الذي يتيح للأفراد الاطلاع على ملفاتهم الصحية طوّرته:', o:['شرطة عُمان السلطانية','وزارة التربية والتعليم','وزارة الصحة','البنك المركزي'], c:2, why:'طوّرت وزارة الصحة تطبيق شفاء ضمن جهود سلطنة عُمان في التحوُّل الرقمي.'}
+     ]},
+     {type:'discuss', id:'d_moe', title:'ركن النقاش 💬', q:'ناقشي خدمات وزارة التربية والتعليم التي تم تحويلها رقميًا، ثم اقترحي خدمات أخرى ترين ضرورة رقمنتها، مع ذكر السبب.'}
+   ]
+ },
+ { id:'p4', title:'نفق الزمن الرقمي', sub:'مراحل التحوُّل الرقمي', icon:'🪜', color:'#f59e0b',
+   desc:'من الورق إلى الشاشة، ثم التحسين، ثم تطوير النظام.',
+   lead:'التحوُّل الرقمي عملية <b>تدريجية</b> تمرّ بثلاث مراحل أساسية، حيث تعتمد كل مرحلة على ما تم تحقيقه في المرحلة التي تسبقها. تتبّعي المثال المدرسي عبر المراحل:',
+   learn:[
+     {k:'timeline', items:[
+       {t:'من الورق إلى الشاشة', en:'From Paper to Screen', p:'تحويل المعلومات التناظرية (غير الرقمية) إلى تنسيق رقمي. مثال: مسح الكتب المدرسية المطبوعة أو وثائق المناهج ضوئيًا وتحويلها إلى ملفات PDF وتخزينها على الحاسوب. أهميتها: تجعل المواد أسهل في التخزين والبحث والمشاركة.'},
+       {t:'التحسين باستخدام الأدوات الرقمية', en:'Improving with Digital Tools', p:'استخدام الأدوات الرقمية لتحسين العمليات الحالية وزيادة كفاءتها دون الحاجة إلى تغيير النظام بأكمله. مثال: رفع المناهج بصيغة PDF على منصة مشتركة يصل إليها المعلمون والطلبة في أي وقت. أهميتها: تعزّز الإنتاجية وتسهّل الوصول والتحديث.'},
+       {t:'تطوير النظام', en:'System Development', p:'المرحلة الأكثر تقدّمًا؛ لا تقتصر على استخدام الأدوات الرقمية، بل تتجاوزها إلى ابتكار طرق جديدة تمامًا لممارسة الأعمال أو تقديم الخدمات. مثال: إعادة تصميم تجربة التعلّم بدروس تفاعلية ومقاطع فيديو ومختبرات افتراضية ومنصات تستجيب لتقدّم الطلبة.'}
+     ]},
+     {k:'note', html:'<b>ℹ️ تذكّري:</b> التحوُّل الرقمي لا يقتصر على التقنية فحسب، بل يشمل أيضًا تغييرات جوهرية في طريقة تفكير الأفراد وتواصلهم وأسلوب عملهم، مما يعكس <b>تحوّلًا ثقافيًا</b> يرافق التقدّم التقني.'}
+   ],
+   games:[
+     {type:'order', title:'لعبة: رتّبي مراحل التحوُّل الرقمي', howto:'استخدمي الأسهم ⬆️⬇️ لترتيب المراحل من الأولى إلى الأكثر تقدّمًا، ثم اضغطي «تحقّقي».',
+       items:['من الورق إلى الشاشة','التحسين باستخدام الأدوات الرقمية','تطوير النظام']},
+     {type:'sort', title:'لعبة: إلى أي مرحلة ينتمي المثال؟', howto:'اضغطي على المثال، ثم على المرحلة المناسبة.',
+       bins:[['s1','📄','1. من الورق إلى الشاشة'],['s2','🛠️','2. التحسين بالأدوات الرقمية'],['s3','🌐','3. تطوير النظام']],
+       items:[
+         ['مسح الكتب المطبوعة ضوئيًا وتحويلها إلى PDF','s1'],
+         ['تحويل الوثائق الورقية إلى ملفات رقمية مخزّنة على الحاسوب','s1'],
+         ['رفع المناهج على منصة مشتركة يصل إليها الجميع في أي وقت','s2'],
+         ['استخدام أدوات رقمية لرفع كفاءة العمل دون تغيير النظام كاملًا','s2'],
+         ['دروس تفاعلية ومختبرات افتراضية تستجيب لتقدّم الطالبة','s3'],
+         ['ابتكار طرق جديدة تمامًا لتقديم الخدمات','s3']
+       ]}
+   ]
+ },
+ { id:'p5', title:'مختبر التقنيات', sub:'التقنيات الأساسية التي تدفع التحوُّل الرقمي', icon:'🧪', color:'#ec4899',
+   desc:'الذكاء الاصطناعي، والسحابة، وإنترنت الأشياء، والبيانات الضخمة، والبلوكتشين، والواقع المعزّز والافتراضي، والجيل الخامس.',
+   lead:'أصبح التحوُّل الرقمي ممكنًا بفضل التقنيات الحديثة التي لا تُستخدم بشكل منفرد، بل تتكامل معًا لتغيير طريقة تخزين البيانات، وحل المشكلات، والتواصل، واتخاذ القرارات:',
+   learn:[{k:'cards', items:[
+     {em:'🤖', t:'الذكاء الاصطناعي', en:'Artificial Intelligence (AI)', p:'يُسهم في تطوير الأنظمة المؤتمتة البسيطة إلى أنظمة ذكية قادرة على اتخاذ القرارات وتحسين أدائها، مثل المساعدات الصوتية، وأنظمة التعرّف على الوجه، وروبوتات المحادثة.'},
+     {em:'☁️', t:'الحوسبة السحابية', en:'Cloud Computing', p:'توفّر بنية تحتية مرنة تسمح بالوصول إلى الموارد مثل المزودات ووحدات التخزين والبرمجيات عبر الإنترنت، مما يقلّل تكاليف شراء الموارد وصيانتها.'},
+     {em:'📡', t:'إنترنت الأشياء', en:'Internet of Things (IoT)', p:'يربط الأشياء والأجهزة ويتحكّم بها عبر الإنترنت لجمع البيانات وتبادلها؛ لمراقبة الآلات، وتتبّع الشحنات، وإدارة استهلاك الطاقة.'},
+     {em:'📈', t:'البيانات الضخمة', en:'Big Data', p:'تحوّل البيانات إلى معلومات ذات قيمة لتحديد الاتجاهات وحل المشكلات واتخاذ قرارات أذكى. مثال: المتاجر الإلكترونية تفهم المنتجات الأكثر شعبية وأوقات التسوّق المفضّلة.'},
+     {em:'🔗', t:'تقنية البلوكتشين', en:'Blockchain Technology', p:'توفّر بيئة رقمية موثوقة ومشفّرة لتبادل البيانات والمعاملات دون الحاجة إلى وسطاء، مما يجعلها أكثر شفافية وكفاءة.'},
+     {em:'🥽', t:'الواقع المعزّز والافتراضي', en:'AR & VR', p:'الواقع المعزّز يضيف عناصر رقمية إلى العالم الحقيقي عبر الهاتف أو النظارات الذكية، بينما يوفّر الواقع الافتراضي بيئة رقمية متكاملة؛ يُستخدمان في الألعاب، ومحاكاة التدريب، والجولات الافتراضية، والعمليات الطبية عن بُعد.'},
+     {em:'📶', t:'شبكات الجيل الخامس', en:'5G Networks', p:'توفّر سرعات أعلى وتأخيرًا أقل واتصالات أكثر موثوقية، مما يسهّل استخدام الأدوات الرقمية في الوقت الفعلي، خاصةً للواقع الافتراضي، والمركبات ذاتية القيادة، والمدن الذكية.'}
+   ]}],
+   games:[{type:'match', title:'لعبة: من صاحب الاختراع؟ طابقي الاستخدام بالتقنية', howto:'اضغطي على الاستخدام، ثم على التقنية التي تقف خلفه.',
+     pairs:[
+       ['مساعد صوتي يجيب أسئلتك ونظام يتعرّف على الوجه','الذكاء الاصطناعي'],
+       ['الوصول إلى المزودات والتخزين والبرمجيات عبر الإنترنت بدل شرائها','الحوسبة السحابية'],
+       ['حساسات متصلة بالإنترنت تراقب الآلات وتتبّع الشحنات','إنترنت الأشياء'],
+       ['تحليل ملايين عمليات الشراء لمعرفة المنتجات الأكثر شعبية','البيانات الضخمة'],
+       ['تبادل معاملات مشفّرة وموثوقة دون وسطاء','البلوكتشين'],
+       ['نظارة ذكية تضيف عناصر رقمية إلى العالم الحقيقي','الواقع المعزّز'],
+       ['اتصال فائق السرعة بتأخير أقل للمركبات ذاتية القيادة والمدن الذكية','شبكات الجيل الخامس 5G']
+     ]}]
+ },
+ { id:'p6', title:'قلعة الأمان', sub:'تحديات التحوُّل الرقمي ومخاطره', icon:'🛡️', color:'#10b981',
+   desc:'الأمن السيبراني، والخصوصية، ومقاومة التغيير، والتكاليف، والاعتماد على التقنية.',
+   lead:'يساعد التحوُّل الرقمي المؤسسات على تحسين خدماتها وكفاءتها، إلا أن هذا التحوّل يصاحبه العديد من المخاطر المرتبطة بتبنّي التقنيات الرقمية، أبرزها:',
+   learn:[{k:'cards', items:[
+     {em:'🦠', t:'تهديدات الأمن السيبراني', en:'Cybersecurity Threats', p:'عندما تنتقل الأنظمة إلى الإنترنت تصبح هدفًا للمتسلّلين، حيث يمكن للهجمات الإلكترونية سرقة البيانات الشخصية، أو إيقاف الخدمات، أو المطالبة بدفع فدية.'},
+     {em:'👁️', t:'مخاوف الخصوصية', en:'Privacy Concerns', p:'تجمع الأنظمة الرقمية كميات هائلة من المعلومات الشخصية، وقد يُساء استخدامها إذا لم يتم التعامل مع هذه البيانات بشكل صحيح.'},
+     {em:'🧱', t:'مقاومة التغيير', en:'Change Resistance', p:'قد يُبدي بعض الموظفين مقاومة بسبب الخوف من فقدان وظائفهم، أو صعوبة التكيّف مع الأدوات الجديدة.', sol:'الحل: توفّر المؤسسات برامج تدريبية ودعمًا تقنيًا ونفسيًا يسهّل التعلّم التدريجي وتبنّي التغيير بثقة.'},
+     {em:'💰', t:'التكاليف المرتفعة', en:'High Costs', p:'قد تكون الأدوات والأنظمة الرقمية باهظة الثمن، مما يتطلّب استثمارات في أدوات وبرامج تدريبية جديدة. لذا يبدأ العديد باستخدام أدوات مجانية أو أساسية ثم يقومون بالترقية تدريجيًا.'},
+     {em:'🔌', t:'الاعتماد على التقنية', en:'Dependence on Technology', p:'الاعتماد المفرط على الأنظمة الرقمية محفوف بالمخاطر؛ فإذا تعطّلت قد تتوقف الخدمات، مثل تعطّل نظام النقل إذا تعطّلت برمجياته.', sol:'الحل: استخدام أنظمة هجينة تدمج بين الحلول الرقمية والتقليدية.'}
+   ]}],
+   games:[
+     {type:'mcq', title:'لعبة: حارسة القلعة — شخّصي التحدّي', qs:[
+       {q:'🚨 ظهرت رسالة على أجهزة مستشفى: «تم تشفير ملفاتكم، ادفعوا مبلغًا لاستعادتها». ما التحدّي؟', o:['مقاومة التغيير','تهديدات الأمن السيبراني','التكاليف المرتفعة','الاعتماد على التقنية'], c:1, why:'الهجمات الإلكترونية قد تسرق البيانات أو توقف الخدمات أو تطالب بدفع فدية.'},
+       {q:'📱 تطبيق يجمع موقعكِ وصوركِ وأرقام هاتفكِ دون وضوح في طريقة استخدامها. ما التحدّي؟', o:['مخاوف الخصوصية','شبكات الجيل الخامس','زيادة الابتكار','التكاليف المرتفعة'], c:0, why:'الأنظمة الرقمية تجمع كميات هائلة من المعلومات الشخصية وقد يُساء استخدامها.'},
+       {q:'😟 موظفة ترفض استخدام النظام الجديد خوفًا من أن يحلّ مكانها. ما الحل الأنسب؟', o:['منع التطوير الرقمي','برامج تدريبية ودعم تقني ونفسي','زيادة ساعات العمل','الاستغناء عنها فورًا'], c:1, why:'لمواجهة مقاومة التغيير توفّر المؤسسات برامج تدريبية ودعمًا تقنيًا ونفسيًا.'},
+       {q:'💸 مشروع صغير يريد التحوّل الرقمي لكن الأنظمة باهظة الثمن. ما التصرّف الذي ذكره الكتاب؟', o:['التخلّي عن الفكرة نهائيًا','البدء بأدوات مجانية أو أساسية ثم الترقية تدريجيًا','الاقتراض لشراء كل شيء دفعة واحدة','العودة إلى الورق'], c:1, why:'يبدأ العديد باستخدام أدوات مجانية أو أساسية ثم يقومون بالترقية تدريجيًا.'},
+       {q:'🚇 تعطّلت برمجيات نظام النقل فتوقفت الخدمة بالكامل. كيف نقلّل هذا الخطر؟', o:['أنظمة هجينة تدمج الحلول الرقمية والتقليدية','الاعتماد على الأنظمة الرقمية فقط','إلغاء نظام النقل','إيقاف تحديث البرمجيات'], c:0, why:'تستخدم المؤسسات أنظمة هجينة تدمج بين الحلول الرقمية والتقليدية لتجنّب توقف الخدمات.'}
+     ]},
+     {type:'discuss', id:'d_risk', title:'ركن النقاش 💬', q:'اذكري أمثلة على مخاطر تهديدات الأمن السيبراني ومخاوف الخصوصية، واقترحي حلولًا مناسبة لها. ثم ناقشي العوامل التي تدفع بعض فئات المجتمع لمقاومة التحوُّل الرقمي، والآثار السلبية المحتملة على الفرد والمجتمع.'}
+   ]
+ }
+];
+
+const FINAL = {
+  id:'final', title:'منصة التتويج', sub:'التقويم الختامي (لنطبّق معًا)', icon:'🏆', color:'#facc15',
+  tf:[ // تدريب 1
+    {q:'يركّز التحوُّل الرقمي على التقنية فقط ولا يركّز على تحسين العمليات.', a:false, why:'التحوُّل الرقمي يهدف إلى تحسين العمليات، ولا يقتصر على التقنية بل يشمل تغيير طريقة التفكير والعمل.'},
+    {q:'تساعد البيانات في الوقت الفعلي المؤسسات على اتخاذ قرارات أكثر ذكاءً.', a:true, why:'الوصول إلى البيانات والتحليلات في الوقت الفعلي يمكّن المؤسسات من اتخاذ قرارات أفضل.'},
+    {q:'تتمثّل إحدى الفوائد الرئيسة للتحوُّل الرقمي في خفض التكاليف.', a:true, why:'التحوُّل الرقمي يعزّز الكفاءة التشغيلية، والحوسبة السحابية مثلًا تقلّل تكاليف شراء الموارد وصيانتها.'},
+    {q:'يسمح إنترنت الأشياء للأجهزة المادية بمشاركة البيانات عبر الإنترنت.', a:true, why:'إنترنت الأشياء يربط الأجهزة عبر الإنترنت لجمع البيانات وتبادلها.'},
+    {q:'يُستخدم الواقع المعزّز في إنشاء الألعاب فقط.', a:false, why:'التصحيح: لا يقتصر على الألعاب؛ بل يُستخدم أيضًا في محاكاة التدريب، والجولات الافتراضية، والمجالات الطبية.'},
+    {q:'تُستخدم البيانات الضخمة لتحليل الاتجاهات وتحسين عملية اتخاذ القرار.', a:true, why:'البيانات الضخمة تحدّد الاتجاهات وتساعد على حل المشكلات واتخاذ قرارات أذكى.'},
+    {q:'تلغي الحوسبة السحابية الحاجة إلى وحدات التخزين الأخرى.', a:false, why:'التصحيح: الحوسبة السحابية توفّر وحدات تخزين عبر الإنترنت وتقلّل التكاليف، لكنها لا تلغي الحاجة إلى وحدات التخزين الأخرى.'},
+    {q:'يتمثّل أحد مخاطر التحوُّل الرقمي في فقدان الوظائف بسبب الأتمتة.', a:true, why:'الخوف من فقدان الوظائف أحد أسباب مقاومة التغيير لدى بعض الموظفين.'},
+    {q:'يمكن أن تنشأ مخاوف تتعلّق بالخصوصية بسبب جمع الكثير من البيانات الشخصية.', a:true, why:'الأنظمة الرقمية تجمع كميات هائلة من المعلومات الشخصية قد يُساء استخدامها.'},
+    {q:'تعمل شبكات الجيل الخامس (5G) على تحسين سرعة وموثوقية الأدوات الرقمية.', a:true, why:'توفّر 5G سرعات أعلى وتأخيرًا أقل واتصالات أكثر موثوقية.'}
+  ],
+  mcq:[ // تدريب 2
+    {q:'ما الهدف الرئيس للتحوُّل الرقمي؟', o:['تحسين الأداء وحل المشكلات باستخدام التقنيات الحديثة','استبدال الأيدي العاملة بالآلات','زيادة استهلاك الكهرباء'], c:0, why:'الهدف تحسين الأداء وحل المشكلات باستخدام التقنيات الحديثة.'},
+    {q:'أيٌّ مما يلي يُعدّ من فوائد التحوُّل الرقمي؟', o:['خدمات أقل عبر الإنترنت','تحسين تجربة العملاء من خلال التطبيقات ومواقع الويب','المزيد من الاجتماعات الشخصية المباشرة'], c:1, why:'تحسين تجربة العملاء من فوائد التحوُّل الرقمي الأربع.'},
+    {q:'ما مرحلة التحوُّل الرقمي التي تتضمّن إعادة تصميم الأنظمة لتقديم خدمات جديدة؟', o:['من الورق إلى الشاشة','التحسين باستخدام الأدوات الرقمية','تطوير النظام'], c:2, why:'تطوير النظام هي المرحلة الأكثر تقدّمًا وتبتكر طرقًا جديدة تمامًا لتقديم الخدمات.'}
+  ],
+  reflect:'تدريب 3: كيف يمكن للذكاء الاصطناعي تغيير الطريقة التي يتعلّم بها الناس أو يعملون بها في المستقبل؟'
+};
+
+/* =========================================================
+   الحالة والتخزين
+   ========================================================= */
+const KEY = 'tahawul-expo-v1';
+let S = load();
+function load(){ try{ return Object.assign(fresh(), JSON.parse(localStorage.getItem(KEY))||{}); }catch(e){ return fresh(); } }
+function fresh(){ return {name:'', warm:false, done:{}, scores:{}, notes:{}, reflect:'', sound:true}; }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+
+const $ = s => document.querySelector(s);
+const app = $('#app');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const shuffle = a => { a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const doneCount = () => PAVS.filter(p => S.done[p.id]).length;
+
+function maxOf(g){
+  if(g.type==='match') return g.pairs.length*10;
+  if(g.type==='sort'||g.type==='order') return g.items.length*10;
+  if(g.type==='pick') return g.items.filter(i=>i[1]).length*10;
+  if(g.type==='mcq') return g.qs.length*10;
+  return 0;
+}
+const MAX = PAVS.reduce((s,p)=>s+p.games.reduce((t,g)=>t+maxOf(g),0),0) + (FINAL.tf.length+FINAL.mcq.length)*10;
+let runPts = 0, runId = null, runLog = [];
+// سجل الأخطاء لعرض «دليل المراجعة» بعد انتهاء الجناح أو التقويم
+function logMiss(q, your, correct, why){ runLog.push({q, your, correct, why:why||''}); }
+function reviewHTML(log){
+  if(!log.length) return `<div class="feedback ok" style="text-align:center">🎉 لا توجد أخطاء! أجبتِ عن كل شيء بشكل صحيح من المحاولة الأولى.</div>`;
+  return `<h3 class="sectionT" style="color:var(--rose)">📝 دليل المراجعة: تعلّمي من أخطائكِ (${log.length})</h3>
+    <div class="review">${log.map((m,i)=>`<div class="rv">
+      <div class="rq"><span>${i+1}</span>${m.q}</div>
+      <div class="ry">❌ إجابتكِ: ${m.your}</div>
+      <div class="rc">✅ الصحيح: ${m.correct}</div>
+      ${m.why?`<div class="rw">💡 ${m.why}</div>`:''}</div>`).join('')}</div>`;
+}
+function total(){ let t=0; for(const k in S.scores){ if(k!==runId) t+=S.scores[k]; } return t + (runId?runPts:0); }
+function addPts(n){ runPts += n; refreshHeader(); }
+function refreshHeader(){
+  $('#hScore').textContent = total();
+  $('#hBadges').textContent = doneCount()+'/'+PAVS.length;
+  $('#sndBtn').textContent = S.sound ? '🔊' : '🔇';
+}
+
+/* ---------- صوت ---------- */
+let AC = null;
+function tone(type){
+  if(!S.sound) return;
+  try{
+    AC = AC || new (window.AudioContext||window.webkitAudioContext)();
+    const seq = {ok:[[660,.08],[880,.12]], no:[[240,.12],[180,.16]], tap:[[520,.04]], win:[[523,.1],[659,.1],[784,.1],[1046,.22]]}[type];
+    let t = AC.currentTime;
+    seq.forEach(([f,d])=>{
+      const o=AC.createOscillator(), g=AC.createGain();
+      o.type = type==='no'?'sawtooth':'triangle'; o.frequency.value=f;
+      g.gain.setValueAtTime(.18,t); g.gain.exponentialRampToValueAtTime(.001,t+d);
+      o.connect(g); g.connect(AC.destination); o.start(t); o.stop(t+d+.02); t+=d;
+    });
+  }catch(e){}
+}
+function toggleSound(){ S.sound=!S.sound; save(); refreshHeader(); tone('tap'); }
+
+/* ---------- قصاصات احتفال ---------- */
+const cv=$('#confetti'), cx=cv.getContext('2d'); let parts=[], raf=null;
+function confetti(n=120){
+  cv.width=innerWidth; cv.height=innerHeight;
+  const cols=['#22d3ee','#a78bfa','#ec4899','#facc15','#f59e0b','#10b981','#14b8a6'];
+  for(let i=0;i<n;i++) parts.push({x:innerWidth/2+(Math.random()-.5)*200,y:innerHeight*.35,vx:(Math.random()-.5)*12,vy:Math.random()*-12-4,s:Math.random()*7+4,c:cols[i%cols.length],r:Math.random()*6,life:120+Math.random()*60});
+  if(!raf) loop();
+}
+function loop(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  parts.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.35;p.vx*=.99;p.r+=.1;p.life--;cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.s/2,-p.s/4,p.s,p.s/2);cx.restore();});
+  parts=parts.filter(p=>p.life>0&&p.y<cv.height+20);
+  raf = parts.length ? requestAnimationFrame(loop) : (cx.clearRect(0,0,cv.width,cv.height), null);
+}
+let toastT;
+function toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),2600); }
+
+/* ---------- الروبوت «عُماني تِك» ---------- */
+const ROBOT = `<svg viewBox="0 0 120 140" aria-hidden="true"><defs><linearGradient id="rg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c7d2fe"/></linearGradient></defs>
+<line x1="60" y1="6" x2="60" y2="20" stroke="#94a3b8" stroke-width="3"/><circle cx="60" cy="6" r="5" fill="#22d3ee"><animate attributeName="opacity" values="1;.3;1" dur="1.6s" repeatCount="indefinite"/></circle>
+<ellipse cx="60" cy="62" rx="48" ry="44" fill="url(#rg)" stroke="#a5b4fc" stroke-width="2"/>
+<rect x="24" y="40" width="72" height="44" rx="20" fill="#0b1b3a"/>
+<rect x="42" y="52" width="9" height="16" rx="4" fill="#38bdf8"><animate attributeName="height" values="16;2;16" dur="4s" begin="1s" repeatCount="indefinite"/></rect>
+<rect x="69" y="52" width="9" height="16" rx="4" fill="#38bdf8"><animate attributeName="height" values="16;2;16" dur="4s" begin="1s" repeatCount="indefinite"/></rect>
+<path d="M46 74 Q60 82 74 74" stroke="#38bdf8" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<circle cx="95" cy="38" r="4" fill="#a3e635"/>
+<path d="M38 104 Q60 118 82 104 L78 128 Q60 136 42 128 Z" fill="url(#rg)" stroke="#a5b4fc" stroke-width="2"/>
+<ellipse cx="60" cy="134" rx="22" ry="4" fill="#22d3ee" opacity=".35"/></svg>`;
+const bot = (msg, big) => `<div class="bot ${big?'big':''}">${ROBOT}<div class="bubble" id="botMsg"><small>عُماني تِك 🤖</small><span>${msg}</span></div></div>`;
+function say(msg){ const b=$('#botMsg span'); if(b) b.innerHTML=msg; }
+
+/* =========================================================
+   الشاشات
+   ========================================================= */
+function render(html, accent){
+  document.documentElement.style.setProperty('--accent', accent||'#22d3ee');
+  app.innerHTML = `<div class="screen">${html}</div>`;
+  scrollTo({top:0,behavior:'smooth'});
+  refreshHeader();
+}
+
+function welcome(){
+  runId=null;
+  render(`<section class="panel">
+    <div class="hero">
+      <div>
+        <span class="kicker">🚀 جولة تفاعلية • الصف الثاني عشر</span>
+        <h1>معرض <span class="grad">المستقبل</span><br>للتحوُّل الرقمي</h1>
+        <p class="muted">أهلًا بكِ يا زائرة المستقبل! ستتجوّلين في أجنحة المعرض: تبدئين ببوابة الزمن، ثم تتعلّمين وتلعبين في ستة أجنحة، وتختمين على منصة التتويج لتحصلي على شهادتكِ الرقمية.</p>
+        <div class="tags"><span>⏳ تمهيد</span><span>📖 معلومات</span><span>🎮 ألعاب</span><span>💬 نقاش</span><span>🏆 تقويم وشهادة</span></div>
+        <div class="field">
+          <label for="nm">اكتبي اسمكِ كما سيظهر في الشهادة:</label>
+          <input id="nm" maxlength="60" placeholder="مثال: مريم بنت سالم الحارثية" value="${esc(S.name)}" autocomplete="name">
+        </div>
+        <div class="row">
+          <button class="btn" onclick="start()">ادخلي المعرض ✨</button>
+          ${S.name ? `<button class="btn ghost" onclick="goHub()">متابعة الزيارة السابقة ↩</button>`:''}
+        </div>
+        <div class="credit">فكرة وتصميم المعلمة: <b>أ. نسرين الفارسي</b></div>
+      </div>
+      <div class="center">
+        <div class="logoCard"><img src="logo.jpg" alt="شعار مدرسة أمامة بنت أبي العاص للتعليم الأساسي (10-12)"></div>
+        ${bot('أنا «عُماني تِك»، مرشدتكِ في المعرض. هيا نكتشف المستقبل معًا! 💫', true)}
+      </div>
+    </div>
+  </section>`);
+  $('#nm').addEventListener('keydown', e => { if(e.key==='Enter') start(); });
+}
+function start(){
+  const v = $('#nm').value.trim();
+  if(v.length < 3){ $('#nm').classList.add('shake'); setTimeout(()=>$('#nm').classList.remove('shake'),400); toast('اكتبي اسمكِ أولًا لنبدأ الجولة 🌸'); $('#nm').focus(); return; }
+  S.name = v; save(); tone('tap');
+  S.warm ? goHub() : warmup();
+}
+
+/* ---------- التمهيد: بوابة الزمن ---------- */
+function warmup(){
+  runId=null;
+  const flipped = new Set();
+  render(`<section class="panel">
+    <span class="kicker">⏳ التمهيد</span>
+    <h2 style="font-size:clamp(24px,4.5vw,36px);margin:8px 0">بوابة الزمن: قديمًا ⟵ اليوم</h2>
+    ${bot(`مرحبًا ${esc(S.name)}! تخيّلي أنكِ تعيشين قبل 25 سنة… اقلبي كل بطاقة لتري كيف تغيّرت حياتنا اليوم.`)}
+    <div class="grid" id="flips">${WARMUP.cards.map((c,i)=>`
+      <button class="flip" data-i="${i}" aria-label="${c.t}: اضغطي للقلب">
+        <div class="in">
+          <div class="f"><span class="em">${c.em}</span><span class="lbl">قديمًا</span><h4>${c.t}</h4><p>${c.then}</p><span class="tap">👆 اضغطي لتري اليوم</span></div>
+          <div class="b"><span class="em">${c.em}</span><span class="lbl">اليوم</span><h4>${c.t}</h4><p>${c.now}</p><span class="tap">✅</span></div>
+        </div>
+      </button>`).join('')}
+    </div>
+    <div id="wq" class="spacer"></div>
+  </section>`, '#f59e0b');
+  document.querySelectorAll('.flip').forEach(b => b.onclick = () => {
+    b.classList.toggle('on'); tone('tap'); flipped.add(b.dataset.i);
+    if(flipped.size === WARMUP.cards.length && !$('#wqBox')) warmQuestion();
+    else if(flipped.size < WARMUP.cards.length) say(`رائع! بقي ${WARMUP.cards.length-flipped.size} من البطاقات…`);
+  });
+}
+function warmQuestion(){
+  say('ممتاز! والآن فكّري جيدًا… 🤔');
+  const q = WARMUP.q;
+  $('#wq').outerHTML = `<div id="wqBox" class="screen" style="margin-top:22px">
+    <div class="qcard"><div class="qtext">${q.q}</div>
+    <div class="opts">${q.o.map((o,i)=>`<button class="tile" data-i="${i}">${o}</button>`).join('')}</div></div>
+    <div id="defArea"></div></div>`;
+  document.querySelectorAll('#wqBox .tile').forEach(b => b.onclick = () => {
+    const i=+b.dataset.i;
+    if(i!==q.c){ b.classList.add('no','shake'); tone('no'); say('فكرة مثيرة! لكن انظري مرة أخرى إلى البطاقات… ما الأداة المشتركة في كل «اليوم»؟'); return; }
+    document.querySelectorAll('#wqBox .tile').forEach(x=>x.disabled=true);
+    b.classList.add('ok'); tone('ok'); confetti(60);
+    say('بالضبط! هذا هو <b>التحوُّل الرقمي</b> 🎉');
+    $('#defArea').innerHTML = `<div class="screen" style="margin-top:20px">
+      <div class="defBox"><h3>📌 ما التحوُّل الرقمي؟</h3><p>${WARMUP.definition}</p></div>
+      <h3 class="sectionT" style="color:#5eead4">⭐ تكمن أهميته في:</h3>
+      <div class="pillGrid">${WARMUP.importance.map(x=>`<div class="pill"><i>${x[0]}</i>${x[1]}</div>`).join('')}</div>
+      <h3 class="sectionT" style="color:var(--sun)">🎯 في هذه الجولة ستتعرّفين على:</h3>
+      <div class="pillGrid">${WARMUP.goals.map((g,i)=>`<div class="pill"><i>${['📌','💡','🏙️','🕌','🪜','🧪','🛡️'][i]}</i>${g}</div>`).join('')}</div>
+      <div class="spacer"></div>
+      <div class="row c"><button class="btn gold" onclick="S.warm=true;save();tone('win');goHub()">ادخلي إلى أجنحة المعرض 🗺️</button></div>
+    </div>`;
+    setTimeout(()=>$('#defArea').scrollIntoView({behavior:'smooth',block:'start'}),200);
+  });
+  setTimeout(()=>$('#wqBox').scrollIntoView({behavior:'smooth',block:'start'}),250);
+}
+
+/* ---------- خريطة المعرض ---------- */
+function goHub(){
+  if(!S.name) return welcome();
+  if(!S.warm) return warmup();
+  runId=null; tone('tap');
+  const n=doneCount(), all=n===PAVS.length, fin=!!S.done.final;
+  const card = (p,i) => `<button class="pav" style="--c:${p.color}" onclick="openPav('${p.id}')">
+      <div class="top"><span class="ic">${p.icon}</span><span class="status ${S.done[p.id]?'done':''}">${S.done[p.id]?'مكتمل ✅ '+(S.scores[p.id]||0)+' ⭐':'الجناح '+(i+1)}</span></div>
+      <h3>${p.title}</h3><p><b style="color:${p.color}">${p.sub}</b><br>${p.desc}</p>
+      <span class="go">${S.done[p.id]?'إعادة الزيارة ↺':'ادخلي الجناح ←'}</span></button>`;
+  render(`<section class="panel">
+      <div class="hubHead">
+        <div><span class="kicker">🗺️ خريطة المعرض</span>
+          <h2 style="font-size:clamp(20px,4vw,30px);margin-top:6px">أهلًا بكِ يا ${esc(S.name)} 🌸</h2>
+          <p class="muted">زوري الأجنحة الستة بالترتيب الذي تحبّينه، ثم توجّهي إلى منصة التتويج.</p></div>
+        <div class="chip" style="font-size:15px">🏅 ${n} / ${PAVS.length} أوسمة</div>
+      </div>
+      <div class="progress"><div id="pg"></div></div>
+      <div class="pavs">
+        <button class="pav" style="--c:#f59e0b" onclick="warmup()">
+          <div class="top"><span class="ic">⏳</span><span class="status done">التمهيد ✅</span></div>
+          <h3>بوابة الزمن</h3><p><b style="color:#f59e0b">مفهوم التحوُّل الرقمي وأهميته</b><br>قديمًا ⟵ اليوم، والتعريف.</p><span class="go">مراجعة ↺</span></button>
+        ${PAVS.map(card).join('')}
+        <button class="pav ${all?'':'locked'}" style="--c:${FINAL.color}" onclick="${all?'openFinal()':`toast('🔒 أكملي الأجنحة الستة أولًا لفتح منصة التتويج')`}">
+          <div class="top"><span class="ic">${all?FINAL.icon:'🔒'}</span><span class="status ${fin?'done':''}">${fin?'مكتمل ✅':all?'مفتوح الآن!':'مقفل'}</span></div>
+          <h3>${FINAL.title}</h3><p><b style="color:${FINAL.color}">${FINAL.sub}</b><br>تدريب 1 (صح/خطأ)، تدريب 2 (اختيار)، تدريب 3 (تأمّل).</p>
+          <span class="go">${all?'ابدئي التقويم ←':'أكملي الأجنحة أولًا'}</span></button>
+        <button class="pav ${fin?'':'locked'}" style="--c:#14b8a6" onclick="${fin?'showCert()':`toast('🔒 تُفتح الشهادة بعد إنهاء منصة التتويج')`}">
+          <div class="top"><span class="ic">${fin?'📜':'🔒'}</span><span class="status ${fin?'done':''}">${fin?'جاهزة!':'مقفلة'}</span></div>
+          <h3>شهادة التميّز الرقمي</h3><p>شهادة باسمكِ وشعار المدرسة، قابلة للطباعة والحفظ PDF.</p>
+          <span class="go">${fin?'عرض الشهادة ←':'—'}</span></button>
+      </div>
+    </section>`, '#22d3ee');
+  requestAnimationFrame(()=>{ $('#pg').style.width = ((n+(fin?1:0))/(PAVS.length+1)*100)+'%'; });
+}
+
+/* ---------- الجناح: تعلّمي ثم العبي ---------- */
+let curPav=null;
+function openPav(id){
+  tone('tap');
+  curPav = PAVS.find(p=>p.id===id);
+  runId=null;
+  const p=curPav;
+  const blocks = p.learn.map(b=>{
+    if(b.k==='cards') return `<div class="info">${b.items.map(c=>`<div class="icard"><span class="em">${c.em}</span><h4>${c.t}</h4>${c.en?`<span class="en">${c.en}</span>`:''}<p>${c.p}</p>${c.ex?`<div class="ex">${c.ex}</div>`:''}${c.sol?`<div class="sol">✅ ${c.sol}</div>`:''}</div>`).join('')}</div>`;
+    if(b.k==='list') return `<div class="list">${b.items.map(x=>`<div><i>${x[0]}</i>${x[1]}</div>`).join('')}</div>`;
+    if(b.k==='note') return `<div class="note">${b.html}</div>`;
+    if(b.k==='timeline') return `<div class="timeline">${b.items.map((x,i)=>`<div class="tl" data-n="${i+1}"><h4>${x.t}</h4><span class="en">${x.en}</span><p>${x.p}</p></div>`).join('')}</div>`;
+  }).join('');
+  render(`<section class="panel">
+    ${pavHead(p,0)}
+    <p class="lead">${p.lead}</p>
+    ${blocks}
+    ${bot('اقرئي البطاقات جيدًا؛ فاللعبة التالية تعتمد عليها! 😉')}
+    <div class="row c"><button class="btn" onclick="startGames()">جاهزة؟ انطلقي إلى اللعبة 🎮</button></div>
+  </section>`, p.color);
+}
+function pavHead(p, step){
+  return `<div class="pavHead">
+    <div><span class="kicker" style="color:${p.color};border-color:${p.color}55;background:${p.color}1a">${p.sub}</span>
+    <h2><span class="ic">${p.icon}</span>${p.title}</h2></div>
+    <div class="row"><div class="steps"><span class="${step===0?'on':''}">1. تعلّمي 📖</span><span class="${step===1?'on':''}">2. العبي 🎮</span></div>
+    <button class="btn ghost noPrint" style="padding:8px 14px;font-size:14px" onclick="goHub()">🗺️ الخريطة</button></div>
+  </div>`;
+}
+function startGames(){ runId=curPav.id; runPts=0; runLog=[]; playGame(0); }
+function playGame(i){
+  const p=curPav, g=p.games[i];
+  if(!g) return finishPav();
+  render(`<section class="panel">${pavHead(p,1)}<div class="game" id="game"></div></section>`, p.color);
+  const next = () => playGame(i+1);
+  const label = p.games.length>1 ? `مرحلة ${i+1} من ${p.games.length}` : '';
+  ENGINES[g.type](g, $('#game'), next, label);
+}
+function finishPav(){
+  const p=curPav, max=p.games.reduce((t,g)=>t+maxOf(g),0);
+  const prev=S.scores[p.id];
+  S.scores[p.id]=Math.max(prev||0, runPts); S.done[p.id]=true; runId=null; save();
+  tone('win'); confetti(160);
+  const pct = max? runPts/max : 1, stars = pct>=.9?3:pct>=.6?2:1;
+  const left = PAVS.length-doneCount();
+  const tip = runLog.length ? `راجعي دليل الأخطاء بالأسفل، ثم حاولي مرة أخرى لتحسين نتيجتكِ 💪` :
+    left ? `أحسنتِ يا ${esc(S.name)}! بقي ${left===1?'جناح واحد':left===2?'جناحان':left+' أجنحة'} قبل منصة التتويج.` : 'رائع! أكملتِ كل الأجنحة… منصة التتويج بانتظاركِ! 🏆';
+  render(`<section class="panel center">
+    <div class="badgeBig">${p.icon}</div>
+    <h2 style="font-size:clamp(22px,4vw,32px)">مبروك! حصلتِ على وسام «${p.title}» 🏅</h2>
+    <div class="stars">${'⭐'.repeat(stars)}${'☆'.repeat(3-stars)}</div>
+    <div class="scoreRow"><div>نتيجتكِ: <b>${runPts}</b> / ${max}</div><div>النسبة: <b>${Math.round(pct*100)}%</b></div><div>الأخطاء: <b>${runLog.length}</b></div>${prev!=null?`<div>أفضل نتيجة: <b>${S.scores[p.id]}</b></div>`:''}</div>
+    <div style="display:flex;justify-content:center">${bot(tip)}</div>
+    ${reviewHTML(runLog)}
+    <div class="spacer"></div>
+    <div class="row c"><button class="btn ${runLog.length?'':'gold'}" onclick="goHub()">العودة إلى خريطة المعرض 🗺️</button>
+      <button class="btn ${runLog.length?'gold':'ghost'}" onclick="tone('tap');startGames()">حاولي مرة أخرى ↺</button>
+      <button class="btn ghost" onclick="openPav('${p.id}')">مراجعة المعلومات 📖</button></div>
+  </section>`, p.color);
+}
+
+/* =========================================================
+   محرّكات الألعاب
+   ========================================================= */
+const ENGINES = {
+  /* مطابقة: موقف ↔ إجابة */
+  match(g, el, next, label){
+    const left = shuffle(g.pairs.map((p,i)=>({t:p[0],i}))), right = shuffle(g.pairs.map((p,i)=>({t:p[1],i})));
+    let selL=null, selR=null, matched=0; const missed=new Set();
+    el.innerHTML = `${gHead(g,label,'مطابقة')}
+      <div class="match"><div class="col"><span class="colT">المواقف / الاستخدامات</span>${left.map(x=>`<button class="tile" data-side="L" data-i="${x.i}">${x.t}</button>`).join('')}</div>
+      <div class="col"><span class="colT">الإجابات</span>${right.map(x=>`<button class="tile" data-side="R" data-i="${x.i}">${x.t}</button>`).join('')}</div></div>
+      ${bot('اختاري بطاقة من كل عمود 👆')}<div id="gEnd"></div>`;
+    el.querySelectorAll('.tile').forEach(b=>b.onclick=()=>{
+      tone('tap');
+      if(b.dataset.side==='L'){ selL&&selL.classList.remove('sel'); selL=b; } else { selR&&selR.classList.remove('sel'); selR=b; }
+      b.classList.add('sel');
+      if(selL&&selR){
+        const a=+selL.dataset.i, c=+selR.dataset.i, L=selL, R=selR; selL=selR=null;
+        if(a===c){
+          L.classList.remove('sel'); R.classList.remove('sel'); L.classList.add('ok'); R.classList.add('ok','dim');
+          L.insertAdjacentHTML('beforeend',`<span class="pair">✔ ${esc(g.pairs[a][1])}</span>`);
+          addPts(missed.has(a)?4:10); tone('ok'); matched++;
+          say(['إجابة ذكية! 🌟','أحسنتِ! ✨','ممتاز! 💪','رائع جدًا! 🎯'][matched%4]);
+          if(matched===g.pairs.length) endGame(el,next,'أكملتِ المطابقة بنجاح! 🎉');
+        } else {
+          if(!missed.has(a)) logMiss(esc(g.pairs[a][0]), esc(g.pairs[c][1]), esc(g.pairs[a][1])); missed.add(a); tone('no'); [L,R].forEach(x=>{x.classList.remove('sel');x.classList.add('no','shake');setTimeout(()=>x.classList.remove('no','shake'),600);});
+          say('ليست هذه… أعيدي قراءة الموقف وفكّري في الكلمة المفتاحية 🔍');
+        }
+      }
+    });
+  },
+
+  /* تصنيف: بطاقة ← مجموعة */
+  sort(g, el, next, label){
+    const items = shuffle(g.items.map((x,i)=>({t:x[0],b:x[1],i}))); let sel=null, placed=0; const missed=new Set();
+    el.innerHTML = `${gHead(g,label,'تصنيف')}
+      <div class="chips">${items.map(x=>`<button class="tile" data-i="${x.i}" data-b="${x.b}">${x.t}</button>`).join('')}</div>
+      <div class="bins">${g.bins.map(b=>`<button class="bin" data-b="${b[0]}"><span class="em">${b[1]}</span><h4>${b[2]}</h4></button>`).join('')}</div>
+      ${bot('اختاري بطاقة أولًا، ثم المكان المناسب لها 👇')}<div id="gEnd"></div>`;
+    const bins = el.querySelectorAll('.bin');
+    el.querySelectorAll('.chips .tile').forEach(t=>t.onclick=()=>{ tone('tap'); sel&&sel.classList.remove('sel'); sel=t; t.classList.add('sel'); bins.forEach(b=>b.classList.add('ready')); say('والآن اضغطي على المجموعة المناسبة ⬇️'); });
+    bins.forEach(b=>b.onclick=()=>{
+      if(!sel) { toast('اختاري بطاقة أولًا 👆'); return; }
+      const i=+sel.dataset.i;
+      if(sel.dataset.b===b.dataset.b){
+        b.insertAdjacentHTML('beforeend',`<span class="got">✔ ${esc(sel.textContent)}</span>`);
+        sel.remove(); sel=null; bins.forEach(x=>x.classList.remove('ready'));
+        addPts(missed.has(i)?4:10); tone('ok'); placed++;
+        say(placed<g.items.length?`صحيح! بقي ${g.items.length-placed} 👏`:'');
+        if(placed===g.items.length) endGame(el,next,'صنّفتِ كل البطاقات بشكل صحيح! 🎉');
+      } else { if(!missed.has(i)){ const nm=x=>g.bins.find(y=>y[0]===x)[2]; logMiss(esc(sel.textContent), nm(b.dataset.b), nm(sel.dataset.b)); } missed.add(i); tone('no'); b.classList.add('shake'); setTimeout(()=>b.classList.remove('shake'),400); say('ليست في هذا المكان… جرّبي مجموعة أخرى 🤔'); }
+    });
+  },
+
+  /* ترتيب */
+  order(g, el, next, label){
+    let cur = shuffle(g.items.map((t,i)=>({t,i})));
+    while(cur.every((x,k)=>x.i===k)) cur=shuffle(cur);
+    let tries=0;
+    const draw = (lock)=>{
+      el.querySelector('#ord').innerHTML = cur.map((x,k)=>`<div class="oitem ${lock?(x.i===k?'ok':'no'):''}"><span class="n">${k+1}</span><span class="t">${x.t}</span>
+        ${lock===true?'':`<span class="mv"><button aria-label="أعلى" ${k===0?'disabled':''} data-u="${k}">⬆️</button><button aria-label="أسفل" ${k===cur.length-1?'disabled':''} data-d="${k}">⬇️</button></span>`}</div>`).join('');
+      el.querySelectorAll('[data-u]').forEach(b=>b.onclick=()=>{const k=+b.dataset.u;[cur[k-1],cur[k]]=[cur[k],cur[k-1]];tone('tap');draw();});
+      el.querySelectorAll('[data-d]').forEach(b=>b.onclick=()=>{const k=+b.dataset.d;[cur[k+1],cur[k]]=[cur[k],cur[k+1]];tone('tap');draw();});
+    };
+    el.innerHTML = `${gHead(g,label,'ترتيب')}<div class="order" id="ord"></div><div class="spacer"></div>
+      <div class="row"><button class="btn" id="chk">تحقّقي ✔</button></div>${bot('تذكّري: كل مرحلة تعتمد على ما قبلها 🧩')}<div id="gEnd"></div>`;
+    draw();
+    el.querySelector('#chk').onclick=()=>{
+      tries++;
+      if(cur.every((x,k)=>x.i===k)){
+        draw(true); el.querySelector('#chk').remove(); tone('ok');
+        addPts(tries===1?g.items.length*10:tries===2?g.items.length*5:g.items.length*2);
+        endGame(el,next, tries===1?'ترتيب صحيح من المحاولة الأولى! 🌟':'ترتيب صحيح! 👏');
+      } else {
+        if(tries===1) logMiss(g.title.replace('لعبة: ',''), cur.map(x=>x.t).join(' ← '), g.items.join(' ← '), 'كل مرحلة تعتمد على ما قبلها: نبدأ بتحويل الورق إلى ملفات رقمية، ثم نحسّن العمليات بالأدوات الرقمية، ثم نطوّر النظام بالكامل.');
+        tone('no'); draw('hint'); setTimeout(()=>draw(),1100);
+        say('بعض المراحل في غير مكانها (باللون الأحمر). تبدأ الرحلة بتحويل الورق إلى ملفات رقمية… 📄');
+      }
+    };
+  },
+
+  /* اختيار متعدد: حدّدي كل الصحيح */
+  pick(g, el, next, label){
+    const items = shuffle(g.items.map((x,i)=>({t:x[0],ok:!!x[1],i}))); const on=new Set();
+    el.innerHTML = `${gHead(g,label,'اكتشاف')}<div class="chips">${items.map(x=>`<button class="tile" data-i="${x.i}">${x.t}</button>`).join('')}</div>
+      <div class="row"><button class="btn" id="chk">تحقّقي ✔</button></div>${bot('اختاري الخدمات الحقيقية فقط… ولا تنخدعي بالدخيلة! 🕵️‍♀️')}<div id="gEnd"></div>`;
+    el.querySelectorAll('.tile').forEach(b=>b.onclick=()=>{ tone('tap'); const i=+b.dataset.i; on.has(i)?on.delete(i):on.add(i); b.classList.toggle('sel'); });
+    el.querySelector('#chk').onclick=()=>{
+      if(!on.size){ toast('اختاري بطاقة واحدة على الأقل'); return; }
+      let good=0, bad=0;
+      el.querySelectorAll('.tile').forEach(b=>{ const it=items.find(x=>x.i===+b.dataset.i); b.disabled=true; b.classList.remove('sel');
+        if(it.ok&&on.has(it.i)){b.classList.add('ok');good++;}
+        else if(it.ok){logMiss(esc(it.t),'لم تختاريها','هي خدمة رقمية تقدّمها شرطة عُمان السلطانية');b.classList.add('ok');b.style.opacity=.6;b.insertAdjacentHTML('beforeend','<span class="pair">⬅ فاتكِ هذا</span>');}
+        else if(on.has(it.i)){logMiss(esc(it.t),'اخترتِها','ليست من خدمات شرطة عُمان السلطانية المذكورة في الكتاب');b.classList.add('no');bad++;b.insertAdjacentHTML('beforeend','<span class="pair" style="color:#fda4af">✖ ليست من خدمات الشرطة</span>');}
+        else b.classList.add('dim'); });
+      el.querySelector('#chk').remove();
+      addPts(Math.max(0,(good-bad)*10)); tone(bad?'no':'ok');
+      const all=items.filter(x=>x.ok).length;
+      endGame(el,next, good===all&&!bad?'اكتشاف مثالي! عرفتِ كل الخدمات 🎯':`اكتشفتِ ${good} من ${all} خدمات${bad?` واخترتِ ${bad} دخيلة`:''}. راجعي البطاقات الخضراء 👀`);
+    };
+  },
+
+  /* أسئلة اختيار من متعدد (تُستخدم أيضًا للصح والخطأ) */
+  mcq(g, el, next, label){
+    let k=0; const res=[];
+    const show=()=>{
+      const q=g.qs[k];
+      el.innerHTML = `${gHead(g,label,g.tag||'اختيار')}
+        <div class="dots">${g.qs.map((_,j)=>`<i class="${res[j]===true?'ok':res[j]===false?'no':j===k?'cur':''}"></i>`).join('')}</div>
+        <div class="qcard"><div class="qmeta">السؤال ${k+1} من ${g.qs.length}</div><div class="qtext">${q.q}</div>
+        <div class="opts ${q.o.length===2?'two':''}">${q.o.map((o,i)=>`<button class="tile" data-i="${i}">${o}</button>`).join('')}</div>
+        <div id="fb" aria-live="polite"></div></div><div id="gEnd"></div>`;
+      el.querySelectorAll('.opts .tile').forEach(b=>b.onclick=()=>{
+        const i=+b.dataset.i, ok=i===q.c; res[k]=ok;
+        el.querySelectorAll('.opts .tile').forEach(x=>{x.disabled=true; if(+x.dataset.i===q.c) x.classList.add('ok');});
+        if(!ok){ b.classList.add('no','shake'); logMiss(q.q, q.o[i], q.o[q.c], q.why); }
+        tone(ok?'ok':'no'); if(ok){addPts(10); confetti(25);}
+        $('#fb').innerHTML = `<div class="feedback ${ok?'ok':'no'}">${ok?'✅ إجابة صحيحة! أحسنتِ':'❌ ليست الإجابة الصحيحة'}<span class="why">💡 ${q.why}</span></div>
+          <div class="spacer"></div><button class="btn" id="nx">${k<g.qs.length-1?'السؤال التالي ←':'إنهاء ✔'}</button>`;
+        $('#nx').onclick=()=>{ tone('tap'); if(++k<g.qs.length) show(); else { const c=res.filter(Boolean).length; next(c, g.qs.length); } };
+        $('#nx').focus({preventScroll:true}); $('#fb').scrollIntoView({behavior:'smooth',block:'nearest'});
+      });
+    };
+    show();
+  },
+
+  /* نقاش (غير محسوب بالنقاط) */
+  discuss(g, el, next, label){
+    el.innerHTML = `${gHead(g,label,'نقاش')}
+      <div class="discuss"><h4>${g.q}</h4><p class="muted" style="font-size:14px">ناقشي الفكرة مع زميلاتكِ، ثم اكتبي خلاصة رأيكِ (اختياري).</p>
+      <textarea id="ta" placeholder="اكتبي أفكاركِ هنا…">${esc(S.notes[g.id]||'')}</textarea></div>
+      ${bot('لا توجد إجابة خاطئة في النقاش… المهم أن تفكّري وتبرّري رأيكِ 💭')}
+      <div class="gameBar"><span class="muted">💾 يُحفظ ما تكتبينه تلقائيًا على جهازكِ</span><button class="btn" id="nx">متابعة ←</button></div>`;
+    $('#ta').oninput=e=>{ S.notes[g.id]=e.target.value; save(); };
+    $('#nx').onclick=()=>{ tone('tap'); next(); };
+  }
+};
+function gHead(g,label,tag){ return `<div class="gTitle"><h3>${g.title}</h3><div class="row">${label?`<span class="muted" style="font-size:13px">${label}</span>`:''}<span class="gTag">${tag}</span></div></div>${g.howto?`<p class="howto">${g.howto}</p>`:''}`; }
+function endGame(el,next,msg){
+  say(msg); tone('win'); confetti(70);
+  el.querySelector('#gEnd').innerHTML = `<div class="gameBar"><b style="color:var(--sun)">${msg}</b><button class="btn gold" id="nx">متابعة ←</button></div>`;
+  $('#nx').onclick=()=>{ tone('tap'); next(); };
+  setTimeout(()=>el.querySelector('#gEnd').scrollIntoView({behavior:'smooth',block:'nearest'}),150);
+}
+
+/* =========================================================
+   منصة التتويج (لنطبّق معًا)
+   ========================================================= */
+function openFinal(){
+  tone('tap'); runId='final'; runPts=0; runLog=[];
+  let tfC=0, mcC=0;
+  const head = step => `<div class="pavHead"><div><span class="kicker">${FINAL.sub}</span><h2><span class="ic">🏆</span>${FINAL.title}</h2></div>
+    <div class="row"><div class="steps">${['تدريب 1','تدريب 2','تدريب 3'].map((s,i)=>`<span class="${i===step?'on':''}">${s}</span>`).join('')}</div>
+    <button class="btn ghost" style="padding:8px 14px;font-size:14px" onclick="goHub()">🗺️ الخريطة</button></div></div>`;
+  const tf = {title:'تدريب 1: صحيحة أم خاطئة؟', howto:'تحقّقي من كل عبارة؛ وعند الخطأ اقرئي التصحيح.', tag:'صح / خطأ',
+    qs: FINAL.tf.map(x=>({q:x.q, o:['صحيحة ✔','خاطئة ✖'], c:x.a?0:1, why:x.why}))};
+  const mc = {title:'تدريب 2: اختاري الإجابة الصحيحة', tag:'اختيار', qs: FINAL.mcq};
+  render(`<section class="panel">${head(0)}<div class="game" id="game"></div></section>`, FINAL.color);
+  ENGINES.mcq(tf, $('#game'), c=>{
+    tfC=c;
+    render(`<section class="panel">${head(1)}<div class="game" id="game"></div></section>`, FINAL.color);
+    ENGINES.mcq(mc, $('#game'), c2=>{
+      mcC=c2;
+      render(`<section class="panel">${head(2)}
+        <div class="discuss"><h4>✍️ ${FINAL.reflect}</h4>
+        <p class="muted" style="font-size:14px">اكتبي رأيكِ في 3 أسطر على الأقل (40 حرفًا فأكثر). سيظهر جزء من إجابتكِ في شهادتكِ.</p>
+        <textarea id="ta" placeholder="مثال: يمكن للذكاء الاصطناعي أن يقدّم لكل طالبة مساعدًا يشرح لها الدروس بحسب مستواها…">${esc(S.reflect)}</textarea>
+        <div class="count" id="cnt"></div></div>
+        ${bot('فكّري في التعلّم والعمل… كيف سيبدو يومكِ بعد 10 سنوات؟ 🔮')}
+        <div class="gameBar"><span></span><button class="btn gold" id="fin" disabled>اعرضي نتيجتي 📊</button></div></section>`, FINAL.color);
+      const ta=$('#ta'), upd=()=>{ const n=ta.value.trim().length; S.reflect=ta.value; save(); $('#cnt').textContent=`${n} حرف`+(n<40?` — بقي ${40-n}`:' ✔'); $('#fin').disabled=n<40; };
+      ta.oninput=upd; upd();
+      $('#fin').onclick=()=>{
+        const prev=S.scores.final;
+        S.scores.final=Math.max(prev||0, runPts); S.done.final=true; runId=null; save(); tone('win'); confetti(160);
+        finalResult(tfC, mcC, prev);
+      };
+    });
+  });
+}
+function finalResult(tfC, mcC, prev){
+  const max=(FINAL.tf.length+FINAL.mcq.length)*10, pts=(tfC+mcC)*10, pct=Math.round(pts/max*100);
+  const stars = pct>=90?3:pct>=60?2:1;
+  render(`<section class="panel center">
+    <div class="badgeBig">🏆</div>
+    <h2 style="font-size:clamp(22px,4vw,32px)">نتيجتكِ في التقويم الختامي</h2>
+    <div class="stars">${'⭐'.repeat(stars)}${'☆'.repeat(3-stars)}</div>
+    <div class="scoreRow"><div>تدريب 1: <b>${tfC}</b> / ${FINAL.tf.length}</div><div>تدريب 2: <b>${mcC}</b> / ${FINAL.mcq.length}</div><div>تدريب 3: <b>✔</b></div><div>النسبة: <b>${pct}%</b></div>${prev!=null?`<div>أفضل نتيجة: <b>${S.scores.final/10}</b> / ${max/10}</div>`:''}</div>
+    <div style="display:flex;justify-content:center">${bot(runLog.length?`راجعي أخطاءكِ جيدًا يا ${esc(S.name)}، ثم أعيدي التقويم لتحسين نتيجتكِ وشهادتكِ 💪`:'نتيجة كاملة! أنتِ خبيرة التحوُّل الرقمي 🌟')}</div>
+    ${reviewHTML(runLog)}
+    <div class="spacer"></div>
+    <div class="row c"><button class="btn gold" onclick="showCert()">استلمي شهادتكِ 📜</button>
+      <button class="btn ${runLog.length?'':'ghost'}" onclick="openFinal()">أعيدي التقويم ↺</button>
+      <button class="btn ghost" onclick="goHub()">🗺️ الخريطة</button></div>
+  </section>`, FINAL.color);
+}
+
+/* =========================================================
+   الشهادة ثلاثية الأبعاد
+   ========================================================= */
+function rosette(){ // ختم ذهبي مسنّن
+  let pts=[]; for(let i=0;i<48;i++){ const a=i*Math.PI/24, r=i%2?44:50; pts.push((60+r*Math.sin(a)).toFixed(1)+','+(60-r*Math.cos(a)).toFixed(1)); }
+  return `<svg viewBox="0 0 120 150" class="rosette" aria-hidden="true"><defs>
+    <linearGradient id="gd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3b0"/><stop offset=".35" stop-color="#e8b923"/><stop offset=".7" stop-color="#b7791f"/><stop offset="1" stop-color="#fde68a"/></linearGradient>
+    <linearGradient id="rb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f766e"/><stop offset="1" stop-color="#134e4a"/></linearGradient></defs>
+    <path d="M38 95 L28 148 L42 138 L52 150 L58 100 Z" fill="url(#rb)"/><path d="M82 95 L92 148 L78 138 L68 150 L62 100 Z" fill="url(#rb)"/>
+    <polygon points="${pts.join(' ')}" fill="url(#gd)" stroke="#92400e" stroke-width=".8"/>
+    <circle cx="60" cy="60" r="36" fill="none" stroke="#92400e" stroke-width="1.2" stroke-dasharray="2 3"/>
+    <circle cx="60" cy="60" r="31" fill="url(#gd)" stroke="#fff7d6" stroke-width="1.5"/>
+    <text x="60" y="52" text-anchor="middle" font-family="Cairo" font-weight="900" font-size="10" fill="#78350f">معرض</text>
+    <text x="60" y="65" text-anchor="middle" font-family="Cairo" font-weight="900" font-size="10" fill="#78350f">المستقبل</text>
+    <text x="60" y="79" text-anchor="middle" font-family="Cairo" font-weight="900" font-size="11" fill="#78350f">${new Date().getFullYear()}</text></svg>`;
+}
+const CORNER = `<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="none" stroke-linecap="round">
+  <path d="M4 60 V14 Q4 4 14 4 H60" stroke="#c9971a" stroke-width="3"/><path d="M12 70 V22 Q12 12 22 12 H70" stroke="#0f766e" stroke-width="1.6"/>
+  <path d="M22 40 H38 V22" stroke="#14b8a6" stroke-width="1.6"/><circle cx="38" cy="22" r="3" fill="#f59e0b" stroke="none"/><circle cx="22" cy="40" r="3" fill="#ec4899" stroke="none"/>
+  <path d="M30 56 V48 H48 V30 H56" stroke="#c9971a" stroke-width="1.4"/><circle cx="56" cy="30" r="2.5" fill="#22d3ee" stroke="none"/></g></svg>`;
+function showCert(){
+  if(!S.done.final) return goHub();
+  runId=null;
+  const t=total(), pct=Math.round(t/MAX*100);
+  const grade = pct>=90?'امتياز':pct>=75?'جيد جدًا':pct>=60?'جيد':'مشاركة';
+  const d = new Date().toLocaleDateString('ar-OM',{year:'numeric',month:'long',day:'numeric'});
+  const refl = S.reflect.trim(), short = refl.length>200 ? refl.slice(0,200)+'…' : refl;
+  render(`<section>
+    <div class="certStage" id="stage">
+      <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+      <div class="cert3d" id="cert">
+        <span class="plate p3"></span><span class="plate p2"></span><span class="plate p1"></span>
+        <div class="paper">
+          <i class="corner c1">${CORNER}</i><i class="corner c2">${CORNER}</i><i class="corner c3">${CORNER}</i><i class="corner c4">${CORNER}</i>
+          <div class="cTop z1"><span>سلطنة عُمان<br>وزارة التربية والتعليم</span>
+            <div class="medal z3"><img src="logo.jpg" alt="شعار مدرسة أمامة بنت أبي العاص"></div>
+            <span>رؤية عُمان<br>2040</span></div>
+          <div class="ribbon z3"><span>شهادة التميّز الرقمي</span></div>
+          <p class="cSub z1">معرض المستقبل للتحوُّل الرقمي • الصف الثاني عشر</p>
+          <p class="cTxt z1">تُمنح هذه الشهادة بكل فخر واعتزاز للطالبة المبدعة</p>
+          <div class="cName z4">${esc(S.name)}</div>
+          <p class="cTxt z1">تقديرًا لإتمامها جميع أجنحة المعرض وتقويمه الختامي، وإتقانها مفاهيم درس «مقدمة إلى التحوُّل الرقمي»</p>
+          <div class="cStats z2"><div><small>النقاط</small><b>${t}</b><small>من ${MAX}</small></div><div><small>النسبة</small><b>${pct}%</b></div><div><small>التقدير</small><b>${grade}</b></div><div><small>الأوسمة</small><b>${doneCount()}/${PAVS.length}</b></div></div>
+          ${short?`<div class="cRefl z1"><b>🔮 رؤيتي للمستقبل مع الذكاء الاصطناعي:</b> ${esc(short)}</div>`:''}
+          <div class="cFoot z2">
+            <div><small>المعلمة</small><b class="sign">أ. نسرين الفارسي</b></div>
+            <div class="sealWrap z4">${rosette()}</div>
+            <div><small>التاريخ</small><b>${d}</b></div>
+          </div>
+        </div>
+        <span class="holo"></span>
+      </div>
+    </div>
+    <p class="center muted noPrint" style="font-size:13px;margin-top:10px">✨ حرّكي المؤشر أو إصبعكِ فوق الشهادة لرؤيتها بشكل ثلاثي الأبعاد</p>
+    <div class="row c noPrint" style="margin-top:14px">
+      <button class="btn gold" onclick="window.print()">🖨️ طباعة / حفظ PDF</button>
+      <button class="btn ghost" onclick="goHub()">🗺️ العودة إلى المعرض</button>
+    </div>
+  </section>`, '#facc15');
+  const st=$('#stage'), c=$('#cert');
+  const move=e=>{ const r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+    c.classList.add('live'); c.style.setProperty('--ry',((x-.5)*22).toFixed(2)+'deg'); c.style.setProperty('--rx',((.5-y)*16).toFixed(2)+'deg');
+    c.style.setProperty('--mx',(x*100).toFixed(1)+'%'); c.style.setProperty('--my',(y*100).toFixed(1)+'%'); };
+  st.addEventListener('pointermove', move);
+  st.addEventListener('pointerleave', ()=>{ c.classList.remove('live'); c.style.removeProperty('--rx'); c.style.removeProperty('--ry'); });
+  confetti(220);
+}
+
+function resetAll(){
+  if(!confirm('هل تريدين بدء زيارة جديدة؟ سيتم مسح التقدّم والنقاط.')) return;
+  const snd=S.sound; S=fresh(); S.sound=snd; save(); welcome();
+}
+
+/* ---------- البداية ---------- */
+refreshHeader();
+S.name ? goHub() : welcome();
+</script>
+</body>
+</html>
